@@ -1,21 +1,571 @@
-MIT License
+# PROPRIETARY COMMERCIAL SOFTWARE LICENSE
 
-Copyright (c) 2026 c09482959-a11y
+**All Rights Reserved.**
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+---
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+## 1. NOTICE
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+This software, source code, object code, documentation, configuration files, data files, models, rules, algorithms, interfaces, assets, tests, build materials, and all other materials contained in or distributed with this repository are collectively referred to as the **“Software.”**
+
+The copyright owner and lawful licensor of the Software is referred to in this License as the **“Licensor.”**
+
+The Software is proprietary and **is not open-source software**.
+
+Except for the limited rights expressly granted by this License, no permission is granted to use, copy, modify, distribute, sublicense, sell, commercially exploit, create derivative works from, or otherwise exercise rights in the Software.
+
+Public availability of source code does not constitute a waiver of copyright, patent, trademark, contractual, proprietary, or other intellectual-property rights.
+
+All rights not expressly granted are reserved.
+
+---
+
+# 2. GITHUB PLATFORM ACCESS
+
+If the Software is made available through GitHub, access to the repository is also subject to GitHub's applicable terms and policies.
+
+Nothing in this License is intended to prohibit rights that must be granted to GitHub or GitHub users solely as necessary for ordinary GitHub platform functionality.
+
+Where a repository is publicly accessible, users may therefore exercise the limited rights arising directly from GitHub's applicable terms, including viewing the repository and using GitHub-supported repository functionality to the extent authorized by those terms.
+
+Such platform access does **not** independently grant permission to:
+
+* commercially use the Software;
+* incorporate the Software into another product or service;
+* redistribute the Software except as expressly permitted;
+* sell or sublicense the Software;
+* deploy the Software in production;
+* operate a commercial hosted service using the Software;
+* create or distribute derivative commercial products based on the Software; or
+* otherwise commercially exploit the Software.
+
+---
+
+# 3. COMMERCIAL LICENSE REQUIRED
+
+Any **Commercial Use** of the Software requires prior authorization from the Licensor under a valid commercial license.
+
+For purposes of this License, **“Commercial Use”** includes use of the Software, directly or indirectly:
+
+1. in connection with a business, profession, commercial enterprise, or revenue-generating activity;
+2. in a product or service that is sold, licensed, leased, subscribed to, monetized, or otherwise supplied for compensation;
+3. internally by a commercial organization for operational, production, development, testing, research, analytical, security, administrative, or infrastructure purposes;
+4. to provide services to third parties;
+5. within software-as-a-service, platform-as-a-service, infrastructure-as-a-service, managed services, hosted services, consulting services, or similar offerings;
+6. as part of another commercial application, library, framework, appliance, system, package, service, or product;
+7. for commercial research or commercial artificial-intelligence or machine-learning development;
+8. for evaluation primarily connected with procurement, commercial development, competitive analysis, or product development beyond separately authorized evaluation rights; or
+9. in any other activity intended to produce direct or indirect commercial advantage.
+
+Commercial rights may be granted through a separate written agreement, order, subscription, enterprise agreement, or other written authorization issued by the Licensor.
+
+---
+
+# 4. COMMERCIAL LICENSE GRANT
+
+Where a licensee has obtained and remains in compliance with a valid commercial license, the Licensor grants that licensee a limited, non-exclusive, non-transferable, non-sublicensable license to use the Software solely:
+
+* during the authorized license term;
+* within authorized usage limits;
+* for purposes expressly authorized by the applicable commercial agreement; and
+* subject to this License and any additional written commercial terms.
+
+No ownership interest in the Software is transferred.
+
+If a separate written commercial agreement conflicts with this License, that agreement controls to the extent of the conflict.
+
+---
+
+# 5. NO IMPLIED LICENSES
+
+No license or right is granted by implication, estoppel, exhaustion, course of dealing, industry practice, publication, disclosure, public repository access, or otherwise.
+
+Possession of a copy of the Software does not establish a license to use it.
+
+Downloading, cloning, receiving, accessing, or possessing source code does not grant rights except those expressly stated in this License, granted under a separate written agreement, or required by applicable law.
+
+---
+
+# 6. PROHIBITED USES
+
+Except where expressly authorized in writing by the Licensor, no person or entity may:
+
+### 6.1 Copy or Distribute
+
+Copy, reproduce, publish, distribute, transmit, mirror, republish, sell, rent, lease, lend, sublicense, assign, transfer, or otherwise make the Software available to another person or entity.
+
+### 6.2 Create Derivative Products
+
+Modify, adapt, translate, transform, port, extend, merge, arrange, or create derivative works based upon the Software for distribution or commercial exploitation.
+
+### 6.3 Incorporate Into Other Products
+
+Incorporate or embed the Software, in whole or in substantial part, into another software product, library, framework, application, platform, firmware image, hardware product, cloud service, or commercial system.
+
+### 6.4 Offer as a Service
+
+Use the Software to operate or provide:
+
+* software-as-a-service;
+* hosted services;
+* managed services;
+* cloud services;
+* security services;
+* scanning services;
+* consulting services;
+* application-service-provider services;
+* outsourcing services; or
+* substantially similar services
+
+for or on behalf of third parties.
+
+### 6.5 Resell or White-Label
+
+Resell, rebrand, white-label, private-label, relicense, sublicense, or commercially redistribute the Software or a substantially equivalent derivative.
+
+### 6.6 Circumvent Licensing Controls
+
+Disable, bypass, circumvent, remove, alter, interfere with, or defeat any:
+
+* license verification;
+* authorization mechanism;
+* activation mechanism;
+* entitlement check;
+* technical restriction;
+* usage limitation;
+* cryptographic verification;
+* integrity protection; or
+* access-control mechanism.
+
+### 6.7 Remove Proprietary Notices
+
+Remove, obscure, modify, or misrepresent any copyright notice, trademark notice, authorship notice, attribution, licensing notice, proprietary marking, or other legal notice contained in the Software.
+
+### 6.8 Misrepresent Ownership
+
+Claim authorship or ownership of the Software or falsely represent the Software as independently developed.
+
+### 6.9 Unlawful or Malicious Use
+
+Knowingly use the Software in violation of applicable law or to facilitate unauthorized access, malicious compromise, malware deployment, destructive activity, theft, fraud, extortion, or other unlawful conduct.
+
+---
+
+# 7. REVERSE ENGINEERING
+
+Except where expressly authorized by the Licensor or where applicable law establishes a non-waivable right, no person may reverse engineer, decompile, disassemble, decode, reconstruct, derive, or attempt to determine the underlying source code, algorithms, models, protocols, structures, techniques, or internal operation of portions of the Software supplied only in compiled, binary, encrypted, packaged, protected, or otherwise non-source form.
+
+This provision does not prohibit examination of source code intentionally made available for authorized inspection.
+
+---
+
+# 8. ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING
+
+Except with prior written authorization from the Licensor, the Software may not be used as training material, fine-tuning material, reinforcement-learning material, benchmark-answer material, or dataset content for developing or improving a commercial artificial-intelligence or machine-learning system.
+
+Without limiting the foregoing, no license is granted to:
+
+* systematically collect the Software for AI training;
+* include substantial portions of the Software in commercial training datasets;
+* fine-tune a commercial model using the Software;
+* use the Software to create functionally equivalent commercial implementations through automated training; or
+* create a commercial model, coding assistant, dataset, or code-generation system whose training materially incorporates protected portions of the Software.
+
+Nothing in this section limits rights necessarily granted under the applicable terms of a platform through which the Software has been intentionally made available.
+
+---
+
+# 9. EVALUATION RIGHTS
+
+Publication of the Software does not itself grant a general evaluation license.
+
+The Licensor may separately authorize evaluation of the Software.
+
+Unless otherwise agreed in writing, authorized evaluation use is:
+
+* temporary;
+* non-exclusive;
+* non-transferable;
+* non-sublicensable;
+* non-production; and
+* limited to internal evaluation.
+
+Evaluation rights do not include permission to distribute, commercialize, deploy into production, provide services to third parties, or create competing commercial products.
+
+---
+
+# 10. INTERNAL COPIES
+
+A commercially licensed user may create only those internal copies of the Software reasonably necessary for the use expressly authorized by the applicable commercial license, including reasonable backup and disaster-recovery copies.
+
+All such copies remain subject to this License and must preserve applicable copyright and proprietary notices.
+
+---
+
+# 11. MODIFICATIONS
+
+A commercial license does not include the right to distribute modifications unless expressly granted in writing.
+
+Where modification is authorized for internal use:
+
+1. all original portions of the Software remain the property of the Licensor;
+2. modification does not transfer ownership of the underlying Software;
+3. modifications may be used only within the authorized license scope; and
+4. modified versions may not be distributed or sublicensed without express written authorization.
+
+Any independent rights a licensee possesses in separately authored material do not grant that licensee the right to distribute the Licensor's Software incorporated into that material.
+
+---
+
+# 12. CONTRIBUTIONS
+
+Unless governed by a separate written contribution agreement, any person intentionally submitting source code, documentation, fixes, enhancements, patches, pull requests, or other materials for inclusion in the Software represents that they possess the right to submit those materials.
+
+To the maximum extent permitted by law, the contributor grants the Licensor a perpetual, irrevocable, worldwide, royalty-free, fully paid-up, transferable and sublicensable license to:
+
+* use;
+* reproduce;
+* modify;
+* adapt;
+* prepare derivative works;
+* publicly perform;
+* publicly display;
+* distribute;
+* sublicense;
+* sell;
+* commercially license; and
+* otherwise exploit
+
+the contribution in connection with the Software.
+
+The Licensor may distribute resulting Software under proprietary, commercial, open-source, source-available, dual-license, or other licensing terms.
+
+Where a separate written contribution agreement exists, that agreement controls.
+
+---
+
+# 13. THIRD-PARTY SOFTWARE
+
+The Software may contain or depend upon third-party software, libraries, datasets, rules, models, assets, or other materials.
+
+Third-party materials remain subject to their respective licenses and copyright notices.
+
+This License does not alter or supersede rights or obligations imposed by an applicable third-party license.
+
+---
+
+# 14. OPEN-SOURCE COMPONENTS
+
+Any open-source component distributed with the Software remains licensed under its applicable open-source license.
+
+Nothing in this License is intended to restrict rights granted by an applicable open-source license.
+
+The proprietary restrictions in this License apply only to portions of the Software for which the Licensor possesses authority to impose those restrictions.
+
+---
+
+# 15. INTELLECTUAL PROPERTY OWNERSHIP
+
+As between the Licensor and any licensee or user, the Licensor retains all right, title, and interest in and to the proprietary portions of:
+
+* the Software;
+* source code;
+* object code;
+* algorithms;
+* architecture;
+* implementation;
+* documentation;
+* proprietary rules;
+* proprietary models;
+* interfaces;
+* designs;
+* databases;
+* schemas;
+* compilations;
+* improvements;
+* trademarks;
+* service marks; and
+* associated intellectual-property rights.
+
+The Software is licensed, not sold.
+
+No purchase, subscription, payment, download, installation, access, or use transfers ownership of the Software or associated intellectual-property rights.
+
+---
+
+# 16. PATENTS
+
+Except to the extent expressly stated in a separate written agreement, no patent license is granted under this License.
+
+Possession or use of the Software does not grant an express or implied license under patents owned or controlled by the Licensor.
+
+---
+
+# 17. TRADEMARKS
+
+This License does not grant permission to use the Licensor's trademarks, service marks, logos, branding, trade names, domain names, or trade dress.
+
+Truthful nominative references to the Software may be made where permitted by applicable law.
+
+No person may falsely imply sponsorship, endorsement, certification, affiliation, or approval by the Licensor.
+
+---
+
+# 18. CONFIDENTIAL MATERIALS
+
+Publicly posted portions of the Software are not confidential merely because they are proprietary.
+
+However, source code, documentation, credentials, keys, specifications, unreleased functionality, security materials, commercial information, development materials, or other information supplied privately and identified as confidential—or which reasonably should be understood to be confidential—must be protected against unauthorized use and disclosure.
+
+Separate confidentiality agreements may impose additional obligations.
+
+---
+
+# 19. SECURITY AND CREDENTIALS
+
+No license is granted to use any credential, private key, certificate, token, API key, password, production secret, signing key, authentication material, or similar security credential that may inadvertently appear in or accompany the Software.
+
+Discovery or possession of such material does not constitute authorization to use it.
+
+---
+
+# 20. COMPLIANCE WITH LAW
+
+Users and licensees are responsible for using the Software in compliance with all laws and regulations applicable to their use, including where relevant laws relating to:
+
+* intellectual property;
+* privacy;
+* data protection;
+* cybersecurity;
+* computer misuse;
+* sanctions;
+* export controls; and
+* import controls.
+
+The Licensor makes no representation that the Software is legally permissible for every jurisdiction or use case.
+
+---
+
+# 21. RECORDS AND LICENSE VERIFICATION
+
+Where a commercial license imposes limits based on users, devices, installations, deployments, transactions, usage, or similar metrics, the licensee must maintain reasonably sufficient records to demonstrate compliance.
+
+Where permitted by an applicable commercial agreement, the Licensor may request reasonable confirmation of compliance.
+
+Nothing in this section independently authorizes access to a licensee's systems or confidential information.
+
+---
+
+# 22. FEES
+
+Commercial-use rights may be conditioned on payment of applicable licensing, subscription, maintenance, support, usage, or other fees established by the applicable commercial agreement.
+
+Failure to satisfy payment obligations may result in suspension or termination of commercial-use rights in accordance with that agreement.
+
+---
+
+# 23. UPDATES AND NEW VERSIONS
+
+Unless separately agreed in writing, the Licensor has no obligation to:
+
+* provide updates;
+* provide upgrades;
+* maintain compatibility;
+* provide technical support;
+* correct defects;
+* maintain any feature;
+* maintain any API;
+* continue development; or
+* make future versions available.
+
+Future versions may be distributed under different licensing terms.
+
+A change to the license applicable to a future release does not retroactively alter rights validly granted for an earlier release unless an applicable agreement expressly provides otherwise.
+
+---
+
+# 24. NO WARRANTY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SOFTWARE IS PROVIDED **“AS IS”** AND **“AS AVAILABLE,”** WITH ALL FAULTS AND WITHOUT WARRANTY OF ANY KIND EXCEPT FOR WARRANTIES EXPRESSLY PROVIDED IN A SEPARATE WRITTEN COMMERCIAL AGREEMENT.
+
+THE LICENSOR DISCLAIMS ALL EXPRESS, IMPLIED, STATUTORY, AND OTHER WARRANTIES, INCLUDING WARRANTIES OF:
+
+* MERCHANTABILITY;
+* FITNESS FOR A PARTICULAR PURPOSE;
+* TITLE;
+* NON-INFRINGEMENT;
+* ACCURACY;
+* RELIABILITY;
+* SECURITY;
+* AVAILABILITY;
+* PERFORMANCE;
+* QUIET ENJOYMENT; and
+* ERROR-FREE OPERATION.
+
+THE LICENSOR DOES NOT WARRANT THAT THE SOFTWARE WILL DETECT, PREVENT, IDENTIFY, REMOVE, MITIGATE, OR CORRECT EVERY SECURITY THREAT, MALICIOUS FILE, VULNERABILITY, ATTACK, DEFECT, OR OTHER CONDITION.
+
+No security or analysis software can guarantee complete detection or protection.
+
+---
+
+# 25. LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE LICENSOR AND ITS CONTRIBUTORS, REPRESENTATIVES, CONTRACTORS, AND AFFILIATES SHALL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, PUNITIVE, OR CONSEQUENTIAL DAMAGES, INCLUDING DAMAGES ARISING FROM:
+
+* loss of profits;
+* loss of revenue;
+* loss of business;
+* loss of goodwill;
+* loss or corruption of data;
+* business interruption;
+* security incidents;
+* system failure;
+* loss of use; or
+* costs of substitute goods or services,
+
+arising out of or relating to the Software, even if advised of the possibility of such damages.
+
+Except where a separate commercial agreement provides a different limit, the Licensor's total aggregate liability arising from or relating to the Software shall not exceed the amount actually paid by the applicable licensee for the Software during the twelve months immediately preceding the event giving rise to liability.
+
+Where no payment was made, the Licensor's aggregate liability shall not exceed the minimum amount, if any, required by applicable law.
+
+Nothing in this section excludes or limits liability that cannot lawfully be excluded or limited.
+
+---
+
+# 26. INDEMNIFICATION
+
+To the extent permitted by applicable law and any applicable commercial agreement, a licensee agrees to defend, indemnify, and hold harmless the Licensor and its representatives, contributors, contractors, and affiliates from third-party claims, liabilities, damages, judgments, losses, costs, and reasonable legal fees arising from:
+
+1. unauthorized use of the Software;
+2. violation of this License;
+3. unlawful use of the Software;
+4. products or services created or provided using the Software; or
+5. infringement or violation of third-party rights through material combined with the Software.
+
+This section does not impose obligations prohibited by applicable law.
+
+---
+
+# 27. TERMINATION
+
+Rights granted under this License may terminate if a licensee materially breaches its terms.
+
+Where a separate written commercial agreement establishes a cure period or termination procedure, that agreement controls.
+
+The Licensor may terminate authorization immediately for:
+
+* intentional unauthorized redistribution;
+* deliberate licensing-control circumvention;
+* unauthorized resale or sublicensing;
+* intentional infringement of intellectual-property rights; or
+* materially unlawful use of the Software.
+
+Upon termination, the affected party must stop exercising terminated rights and, where legally and technically practicable, delete proprietary copies that it is no longer authorized to possess, except copies required by law or retained automatically in ordinary archival backups.
+
+Terms concerning ownership, intellectual property, restrictions, confidentiality, warranties, liability, indemnification, dispute provisions, and other provisions that by their nature should survive termination shall survive.
+
+---
+
+# 28. EQUITABLE RELIEF
+
+Unauthorized disclosure, distribution, sublicensing, commercial exploitation, or misuse of the Software may cause harm for which monetary damages are inadequate.
+
+Subject to applicable law, the Licensor may seek injunctive, equitable, or other available relief in addition to other remedies.
+
+---
+
+# 29. ASSIGNMENT
+
+A licensee may not assign, delegate, sublicense, transfer, or otherwise dispose of rights granted under this License without prior written authorization unless a separate agreement expressly permits it.
+
+Any attempted unauthorized assignment is void to the extent permitted by applicable law.
+
+The Licensor may assign its rights as permitted by applicable law.
+
+---
+
+# 30. GOVERNING LAW AND DISPUTES
+
+This License shall be interpreted and enforced under the law applicable to the Licensor and the relevant transaction, subject to mandatory conflict-of-law rules and any separate written agreement between the parties.
+
+Where a separate commercial agreement specifies governing law, jurisdiction, arbitration, or another dispute-resolution mechanism, that agreement controls.
+
+Nothing in this License is intended to override mandatory legal rights or jurisdictional requirements that cannot lawfully be waived.
+
+---
+
+# 31. SEVERABILITY
+
+If any provision of this License is determined to be invalid, illegal, or unenforceable, that provision shall be enforced to the maximum extent permitted by law and the remaining provisions shall remain effective.
+
+---
+
+# 32. WAIVER
+
+Failure to enforce a provision of this License does not constitute a waiver of that provision or the right to enforce it later.
+
+A waiver is effective only when made by a person legally authorized to act on behalf of the Licensor.
+
+---
+
+# 33. ENTIRE AGREEMENT
+
+This License, together with any applicable written commercial agreement, order, subscription agreement, enterprise agreement, contribution agreement, or other authorized written instrument, governs the rights addressed by those documents.
+
+Repository comments, issues, discussions, commit messages, informal communications, or documentation do not modify this License unless they constitute legally valid written authorization from the Licensor.
+
+---
+
+# 34. ORDER OF PRECEDENCE
+
+In the event of a conflict, the following order applies:
+
+1. a separately executed written commercial agreement expressly governing the Software;
+2. an applicable written license schedule or order;
+3. this Proprietary Commercial Software License; and
+4. general repository documentation.
+
+Third-party licenses govern their respective third-party components.
+
+The terms of any hosting platform independently govern use of that platform.
+
+---
+
+# 35. LICENSE VERSIONS
+
+Each release of the Software is governed by the license distributed with that release unless otherwise expressly agreed.
+
+The Licensor may publish revised terms for future releases.
+
+Publication of new licensing terms does not automatically grant additional rights under earlier versions and does not revoke rights previously granted under a valid agreement except as permitted by that agreement or applicable law.
+
+---
+
+# 36. ADDITIONAL COMMERCIAL RIGHTS
+
+Commercial licenses, enterprise licenses, redistribution rights, OEM rights, hosted-service rights, integration rights, and other permissions not granted by this License may be separately authorized by the Licensor.
+
+No such rights are granted unless expressly provided in a legally valid written authorization.
+
+---
+
+# 37. COPYRIGHT AND RIGHTS RESERVATION
+
+The Software and associated materials are protected by copyright and other applicable intellectual-property laws and treaties.
+
+**All Rights Reserved.**
+
+Unauthorized copying, distribution, modification, publication, sublicensing, sale, commercial exploitation, or other unauthorized use may result in legal liability where provided by applicable law.
+
+---
+
+## PROPRIETARY SOFTWARE — NOT OPEN SOURCE
+
+Unless an individual file or component expressly states otherwise:
+
+**NO PERMISSION IS GRANTED FOR COMMERCIAL USE, REDISTRIBUTION, SUBLICENSING, RESALE, OR CREATION OF DISTRIBUTED DERIVATIVE WORKS WITHOUT PRIOR WRITTEN AUTHORIZATION FROM THE LICENSOR.**
+
+Viewing, accessing, downloading, or possessing source code does not transfer ownership.
+
+All rights not expressly granted are reserved.
