@@ -1,0 +1,331 @@
+{
+  "$id": "binary_policy.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "binary_behavior_bucket_terms": {
+      "additionalProperties": false,
+      "properties": {
+        "credential": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "evasion": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "injection": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "network": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "persistence": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "network",
+        "credential",
+        "persistence",
+        "injection",
+        "evasion"
+      ],
+      "type": "object"
+    },
+    "binary_c2_tasking_terms": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "binary_command_execution_terms": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "binary_high_confidence_tags": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "binary_lolbin_chain_definitions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "optional": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "required": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "score": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "name",
+          "required",
+          "optional",
+          "score"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "binary_os_execution_tags": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "binary_ransomware_terms": {
+      "additionalProperties": false,
+      "properties": {
+        "crypto": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "marker": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "rename_delete": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "traversal": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "write": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "traversal",
+        "write",
+        "rename_delete",
+        "crypto",
+        "marker"
+      ],
+      "type": "object"
+    },
+    "binary_scheduled_task_persistence_rules": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "hit": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "mode": {
+            "enum": [
+              "any",
+              "all"
+            ]
+          },
+          "score": {
+            "type": "number"
+          },
+          "tags": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "mode",
+          "tags",
+          "score",
+          "hit"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "binary_string_rules": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "needle": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "tag": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "needle",
+          "tag"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "raw_escalation_dangerous_anchor_tags": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "strict_fast_benign_binary_magic_hex": {
+      "items": {
+        "pattern": "^(?:[0-9A-Fa-f]{2})+$",
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "strict_fast_benign_deny_tokens": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "strict_fast_benign_extensions": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "strict_fast_benign_max_bytes": {
+      "maximum": 134217728,
+      "minimum": 1,
+      "type": "integer"
+    }
+  },
+  "required": [
+    "schema_version",
+    "entropy_read_max_bytes",
+    "entropy_high_threshold",
+    "entropy_high_score",
+    "entropy_very_high_threshold",
+    "entropy_very_high_score",
+    "entropy_low_visibility_threshold",
+    "entropy_low_visibility_printable_ratio",
+    "entropy_low_visibility_score",
+    "entropy_packer_markers",
+    "entropy_packer_score",
+    "dotnet_read_max_bytes",
+    "dotnet_extensions",
+    "dotnet_extension_mismatch_extensions",
+    "dotnet_metadata_markers",
+    "dotnet_behavior_markers",
+    "il_opcode_patterns",
+    "il_obfuscation_markers",
+    "il_behavior_tag_weights",
+    "il_score_call_ldstr_bonus",
+    "il_score_process_call_bonus",
+    "il_score_network_call_bonus",
+    "il_score_memory_pinvoke_bonus",
+    "il_obfuscation_per_marker",
+    "il_obfuscation_packed_bonus",
+    "il_obfuscation_indirect_call_bonus",
+    "il_op_score_weight",
+    "il_max_ops_for_score",
+    "il_obfuscation_marker_result_limit",
+    "dotnet_il_op_limit",
+    "dotnet_il_obfuscation_threshold",
+    "dotnet_il_behavior_threshold",
+    "binary_lolbin_chain_definitions",
+    "binary_scheduled_task_persistence_rules",
+    "raw_escalation_dangerous_anchor_tags",
+    "binary_command_execution_terms",
+    "binary_c2_tasking_terms",
+    "binary_os_execution_tags",
+    "binary_behavior_bucket_terms",
+    "binary_high_confidence_tags",
+    "strict_fast_benign_extensions",
+    "strict_fast_benign_max_bytes",
+    "strict_fast_benign_binary_magic_hex",
+    "strict_fast_benign_deny_tokens",
+    "binary_string_rules",
+    "binary_ransomware_terms"
+  ],
+  "type": "object"
+}

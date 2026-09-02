@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "allow_download": {
+      "type": "boolean"
+    },
+    "api_url": {
+      "const": "https://api.github.com/repos/mitre-attack/attack-stix-data/contents/enterprise-attack/enterprise-attack.json"
+    },
+    "config_version": {
+      "const": "stage2636_11008_attack_config_v2"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "force_refresh": {
+      "type": "boolean"
+    },
+    "maximum_bytes": {
+      "maximum": 268435456,
+      "minimum": 1024,
+      "type": "integer"
+    },
+    "ref": {
+      "maxLength": 128,
+      "minLength": 1,
+      "pattern": "^(?!.*\\.\\.)(?!.*\\/$)[A-Za-z0-9][A-Za-z0-9._/-]{0,127}$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "allow_download",
+    "api_url",
+    "config_version",
+    "enabled",
+    "force_refresh",
+    "maximum_bytes",
+    "ref"
+  ],
+  "title": "UMIGE Enterprise ATT&CK configuration",
+  "type": "object"
+}

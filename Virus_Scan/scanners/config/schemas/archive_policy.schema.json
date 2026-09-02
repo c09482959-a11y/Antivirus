@@ -1,0 +1,48 @@
+{
+  "$id": "archive_policy.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "nested_archive_suffixes": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 64,
+      "minItems": 1,
+      "type": "array"
+    },
+    "schema_version": {
+      "const": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "default_max_depth",
+    "default_max_members",
+    "default_max_member_size",
+    "member_probe_bytes",
+    "member_text_max_size",
+    "ecosystem_score_limit",
+    "ecosystem_score_warn",
+    "rpa_read_max_bytes",
+    "rpa_member_max_count",
+    "rpa_member_max_bytes",
+    "rpa_index_max_bytes",
+    "rpa_zip_max_depth",
+    "rpa_zip_max_members",
+    "rpa_zip_max_member_size",
+    "nested_archive_suffixes",
+    "rarity_high_risk_probability",
+    "rarity_high_risk_min_score",
+    "rarity_high_risk_multiplier",
+    "rarity_rare_probability",
+    "rarity_rare_multiplier",
+    "rarity_uncommon_probability",
+    "rarity_uncommon_multiplier",
+    "rarity_common_probability",
+    "rarity_common_multiplier",
+    "rarity_default_multiplier"
+  ],
+  "type": "object"
+}

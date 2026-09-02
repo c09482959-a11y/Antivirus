@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "filetype_policy.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "behavior_model_version",
+    "high_risk_buckets",
+    "non_execution_capabilities",
+    "container_execution_capabilities",
+    "engine_extension_bucket_policies",
+    "global_common_filetype_buckets",
+    "engine_specific_filetype_buckets",
+    "passive_asset_categories",
+    "dangerous_actual_categories",
+    "expected_magic_types_by_extension",
+    "routable_extensions_by_claim",
+    "all_routable_extensions",
+    "magic_type_category"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "behavior_model_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "high_risk_buckets": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "non_execution_capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "container_execution_capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "engine_extension_bucket_policies": {
+      "type": "object"
+    },
+    "global_common_filetype_buckets": {
+      "type": "object"
+    },
+    "engine_specific_filetype_buckets": {
+      "type": "object"
+    },
+    "magic_type_category": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "expected_magic_types_by_extension": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "uniqueItems": true
+      }
+    },
+    "routable_extensions_by_claim": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "uniqueItems": true
+      }
+    },
+    "all_routable_extensions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    }
+  }
+}

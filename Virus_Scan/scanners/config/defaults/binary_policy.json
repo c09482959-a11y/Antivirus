@@ -1,0 +1,727 @@
+{
+  "binary_behavior_bucket_terms": {
+    "credential": [
+      "credential",
+      "token",
+      "password",
+      "dpapi",
+      "lsass",
+      "browser"
+    ],
+    "evasion": [
+      "amsi",
+      "etw",
+      "defender",
+      "evasion",
+      "sandbox",
+      "shadowcopy"
+    ],
+    "injection": [
+      "inject",
+      "thread",
+      "hollow",
+      "memory_write",
+      "write_process"
+    ],
+    "network": [
+      "network",
+      "download",
+      "upload",
+      "c2",
+      "beacon",
+      "http",
+      "dns"
+    ],
+    "persistence": [
+      "persistence",
+      "run_key",
+      "scheduled",
+      "schtasks",
+      "startup",
+      "service"
+    ]
+  },
+  "binary_c2_tasking_terms": [
+    "command",
+    "cmd",
+    "task",
+    "tasking",
+    "beacon",
+    "checkin",
+    "heartbeat",
+    "shell"
+  ],
+  "binary_command_execution_terms": [
+    "process.start",
+    "os.system",
+    "subprocess",
+    "child_process",
+    "exec(",
+    "eval(",
+    "powershell",
+    "cmd.exe"
+  ],
+  "binary_high_confidence_tags": [
+    "confirmed_pickle_exec_chain",
+    "pickle_opcode_execution",
+    "download_execute_chain",
+    "download_write_execute_chain",
+    "process_injection",
+    "credential_dump_attempt",
+    "network_c2",
+    "remote_command_channel",
+    "encoded_powershell"
+  ],
+  "binary_lolbin_chain_definitions": [
+    {
+      "name": "download_write_persist_execute",
+      "optional": [
+        "registry_mod",
+        "scheduled_task",
+        "schtasks_create"
+      ],
+      "required": [
+        "network_download",
+        "file_write",
+        "process_exec"
+      ],
+      "score": 8.0
+    },
+    {
+      "name": "powershell_encoded_execution",
+      "optional": [
+        "network_download",
+        "invoke_expression"
+      ],
+      "required": [
+        "powershell_exec",
+        "encoded_powershell"
+      ],
+      "score": 8.0
+    },
+    {
+      "name": "wscript_network_script_execution",
+      "optional": [
+        "wscript_exec",
+        "cscript_exec",
+        "jscript_execution",
+        "vbs_execution"
+      ],
+      "required": [
+        "script_execution",
+        "network_download"
+      ],
+      "score": 7.0
+    },
+    {
+      "name": "schtasks_persistence_execution",
+      "optional": [
+        "schtasks",
+        "schtasks_create",
+        "cmd_exec"
+      ],
+      "required": [
+        "scheduled_task",
+        "process_exec"
+      ],
+      "score": 8.0
+    },
+    {
+      "name": "mshta_fileless_execution",
+      "optional": [
+        "network_download",
+        "process_exec"
+      ],
+      "required": [
+        "mshta_exec",
+        "script_execution"
+      ],
+      "score": 8.0
+    }
+  ],
+  "binary_os_execution_tags": [
+    "process_exec",
+    "script_execution",
+    "cmd_exec",
+    "powershell_exec",
+    "shell_exec",
+    "win32_process_create",
+    "python_exec",
+    "bash_exec",
+    "mshta_exec",
+    "wscript_exec",
+    "cscript_exec"
+  ],
+  "binary_ransomware_terms": {
+    "crypto": [
+      "cryptencrypt",
+      "bcryptencrypt",
+      "aesencrypt",
+      "rijndael",
+      "cryptgenrandom",
+      "chacha20",
+      "rsaencrypt"
+    ],
+    "marker": [
+      "ransom",
+      "decrypt",
+      "recover files",
+      "your files",
+      "bitcoin",
+      "monero",
+      ".locked",
+      ".encrypted"
+    ],
+    "rename_delete": [
+      "movefile",
+      "movefileex",
+      "deletefile",
+      "replacefile",
+      "os.rename",
+      "file.move"
+    ],
+    "traversal": [
+      "findfirstfile",
+      "findnextfile",
+      "directory.getfiles",
+      "os.walk",
+      "glob.glob"
+    ],
+    "write": [
+      "writefile",
+      "createfile",
+      "file.write",
+      "filestream",
+      "ofstream"
+    ]
+  },
+  "binary_scheduled_task_persistence_rules": [
+    {
+      "hit": "schtasks persistence",
+      "mode": "any",
+      "score": 8.0,
+      "tags": [
+        "schtasks",
+        "schtasks_create",
+        "scheduled_task"
+      ]
+    },
+    {
+      "hit": "legacy task scheduling",
+      "mode": "any",
+      "score": 6.0,
+      "tags": [
+        "at_exec",
+        "at.exe"
+      ]
+    },
+    {
+      "hit": "delayed execution staging",
+      "mode": "any",
+      "score": 4.0,
+      "tags": [
+        "delayed_execution"
+      ]
+    },
+    {
+      "hit": "scheduled execution chain",
+      "mode": "all",
+      "score": 6.0,
+      "tags": [
+        "scheduled_task",
+        "process_exec"
+      ]
+    }
+  ],
+  "binary_string_rules": [
+    {
+      "needle": "powershell",
+      "tag": "powershell_exec"
+    },
+    {
+      "needle": "encodedcommand",
+      "tag": "encoded_powershell"
+    },
+    {
+      "needle": " -enc ",
+      "tag": "encoded_powershell"
+    },
+    {
+      "needle": "http://",
+      "tag": "url_present"
+    },
+    {
+      "needle": "https://",
+      "tag": "url_present"
+    },
+    {
+      "needle": "downloadstring",
+      "tag": "network_download"
+    },
+    {
+      "needle": "downloadfile",
+      "tag": "network_download"
+    },
+    {
+      "needle": "invoke-webrequest",
+      "tag": "network_download"
+    },
+    {
+      "needle": "certutil",
+      "tag": "certutil_exec"
+    },
+    {
+      "needle": "bitsadmin",
+      "tag": "bitsadmin_exec"
+    },
+    {
+      "needle": "mshta",
+      "tag": "mshta_exec"
+    },
+    {
+      "needle": "rundll32",
+      "tag": "rundll32_exec"
+    },
+    {
+      "needle": "regsvr32",
+      "tag": "regsvr32_exec"
+    },
+    {
+      "needle": "writeprocessmemory",
+      "tag": "memory_write"
+    },
+    {
+      "needle": "virtualalloc",
+      "tag": "memory_allocate"
+    },
+    {
+      "needle": "createremotethread",
+      "tag": "thread_execution"
+    }
+  ],
+  "dotnet_behavior_markers": [
+    {
+      "needle": "assembly.load",
+      "tag": "assembly_load"
+    },
+    {
+      "needle": "system.reflection",
+      "tag": "reflection"
+    },
+    {
+      "needle": "type.gettype",
+      "tag": "dynamic_loader"
+    },
+    {
+      "needle": "methodinfo.invoke",
+      "tag": "methodinfo_invoke"
+    },
+    {
+      "needle": "powershell",
+      "tag": "powershell_exec"
+    },
+    {
+      "needle": "webclient",
+      "tag": "network_download"
+    },
+    {
+      "needle": "downloadstring",
+      "tag": "download_execute"
+    },
+    {
+      "needle": "process.start",
+      "tag": "process_exec"
+    }
+  ],
+  "dotnet_extension_mismatch_extensions": [
+    ".bytes",
+    ".dat",
+    ".bin",
+    ".asset"
+  ],
+  "dotnet_extensions": [
+    ".dll",
+    ".exe",
+    ".bytes",
+    ".dat",
+    ".bin",
+    ".asset"
+  ],
+  "dotnet_il_behavior_threshold": 0.2,
+  "dotnet_il_obfuscation_threshold": 0.3,
+  "dotnet_il_op_limit": 64,
+  "dotnet_metadata_markers": [
+    "mscoree.dll",
+    "bsjb",
+    "#strings",
+    "#us",
+    "#~",
+    "system.reflection",
+    "assembly.load",
+    "methodinfo.invoke"
+  ],
+  "dotnet_read_max_bytes": 5000000,
+  "entropy_high_score": 0.35,
+  "entropy_high_threshold": 7.2,
+  "entropy_low_visibility_printable_ratio": 0.18,
+  "entropy_low_visibility_score": 0.2,
+  "entropy_low_visibility_threshold": 7.0,
+  "entropy_packer_markers": [
+    "upx",
+    "aspack",
+    "themida",
+    "vmprotect",
+    "enigma",
+    "mpress",
+    "packed",
+    "packer"
+  ],
+  "entropy_packer_score": 0.2,
+  "entropy_read_max_bytes": 5000000,
+  "entropy_very_high_score": 0.2,
+  "entropy_very_high_threshold": 7.6,
+  "il_behavior_tag_weights": [
+    {
+      "tag": "process_exec",
+      "weight": 0.25
+    },
+    {
+      "tag": "powershell_exec",
+      "weight": 0.3
+    },
+    {
+      "tag": "cmd_exec",
+      "weight": 0.3
+    },
+    {
+      "tag": "network_activity",
+      "weight": 0.2
+    },
+    {
+      "tag": "process_injection",
+      "weight": 0.35
+    },
+    {
+      "tag": "packed_or_obfuscated",
+      "weight": 0.25
+    },
+    {
+      "tag": "high_entropy_section",
+      "weight": 0.15
+    },
+    {
+      "tag": "very_high_entropy",
+      "weight": 0.2
+    }
+  ],
+  "il_max_ops_for_score": 8,
+  "il_obfuscation_indirect_call_bonus": 0.2,
+  "il_obfuscation_marker_result_limit": 16,
+  "il_obfuscation_markers": [
+    "confuser",
+    "dnspy",
+    "eazfuscator",
+    "obfuscated",
+    "stringdecrypt",
+    "virtualalloc",
+    "writeprocessmemory",
+    "getprocaddress",
+    "loadlibrary"
+  ],
+  "il_obfuscation_packed_bonus": 0.25,
+  "il_obfuscation_per_marker": 0.12,
+  "il_op_score_weight": 0.025,
+  "il_opcode_patterns": [
+    {
+      "name": "CALL",
+      "pattern": "\\b(?:call|callvirt)\\b"
+    },
+    {
+      "name": "LDSTR",
+      "pattern": "\\bldstr\\b"
+    },
+    {
+      "name": "NEWOBJ",
+      "pattern": "\\bnewobj\\b"
+    },
+    {
+      "name": "LDFTN",
+      "pattern": "\\bldftn\\b"
+    },
+    {
+      "name": "CALLI",
+      "pattern": "\\bcalli\\b"
+    },
+    {
+      "name": "PINVOKE",
+      "pattern": "\\bpinvokeimpl\\b|\\bDllImport\\b"
+    },
+    {
+      "name": "REFLECTION",
+      "pattern": "System\\.Reflection|GetMethod\\(|Invoke\\("
+    },
+    {
+      "name": "PROCESS",
+      "pattern": "System\\.Diagnostics\\.Process|ProcessStartInfo|Start\\("
+    },
+    {
+      "name": "NETWORK",
+      "pattern": "System\\.Net\\.|HttpClient|WebRequest|Socket\\b"
+    },
+    {
+      "name": "THREAD",
+      "pattern": "CreateThread|ThreadStart|Task\\.Run"
+    },
+    {
+      "name": "MEMORY",
+      "pattern": "VirtualAlloc|WriteProcessMemory|Marshal\\.Copy"
+    }
+  ],
+  "il_score_call_ldstr_bonus": 0.15,
+  "il_score_memory_pinvoke_bonus": 0.25,
+  "il_score_network_call_bonus": 0.2,
+  "il_score_process_call_bonus": 0.25,
+  "native_elf_import_semantics": [
+    {
+      "operation_kind": "file_read",
+      "symbol": "read"
+    },
+    {
+      "operation_kind": "file_read",
+      "symbol": "pread"
+    },
+    {
+      "operation_kind": "file_read",
+      "symbol": "pread64"
+    },
+    {
+      "operation_kind": "file_read",
+      "symbol": "fread"
+    },
+    {
+      "operation_kind": "file_write",
+      "symbol": "write"
+    },
+    {
+      "operation_kind": "file_write",
+      "symbol": "pwrite"
+    },
+    {
+      "operation_kind": "file_write",
+      "symbol": "pwrite64"
+    },
+    {
+      "operation_kind": "file_write",
+      "symbol": "fwrite"
+    },
+    {
+      "operation_kind": "network_send",
+      "symbol": "send"
+    },
+    {
+      "operation_kind": "network_send",
+      "symbol": "sendto"
+    },
+    {
+      "operation_kind": "network_send",
+      "symbol": "sendmsg"
+    },
+    {
+      "operation_kind": "network_download",
+      "symbol": "recv"
+    },
+    {
+      "operation_kind": "network_download",
+      "symbol": "recvfrom"
+    },
+    {
+      "operation_kind": "network_download",
+      "symbol": "recvmsg"
+    },
+    {
+      "operation_kind": "network_connect",
+      "symbol": "connect"
+    },
+    {
+      "operation_kind": "network_download",
+      "symbol": "curl_easy_perform"
+    },
+    {
+      "operation_kind": "file_open",
+      "symbol": "open"
+    },
+    {
+      "operation_kind": "file_open",
+      "symbol": "open64"
+    },
+    {
+      "operation_kind": "file_open",
+      "symbol": "openat"
+    },
+    {
+      "operation_kind": "file_open",
+      "symbol": "fopen"
+    },
+    {
+      "operation_kind": "process_launch",
+      "symbol": "execve"
+    },
+    {
+      "operation_kind": "process_launch",
+      "symbol": "execv"
+    },
+    {
+      "operation_kind": "process_launch",
+      "symbol": "execl"
+    },
+    {
+      "operation_kind": "process_launch",
+      "symbol": "system"
+    },
+    {
+      "operation_kind": "memory_allocate",
+      "symbol": "mmap"
+    },
+    {
+      "operation_kind": "memory_allocate",
+      "symbol": "mmap64"
+    },
+    {
+      "operation_kind": "memory_protect",
+      "symbol": "mprotect"
+    }
+  ],
+  "native_elf_syscall_semantics": [
+    {
+      "name": "read",
+      "number": 0,
+      "operation_kind": "file_read"
+    },
+    {
+      "name": "write",
+      "number": 1,
+      "operation_kind": "file_write"
+    },
+    {
+      "name": "open",
+      "number": 2,
+      "operation_kind": "file_open"
+    },
+    {
+      "name": "mmap",
+      "number": 9,
+      "operation_kind": "memory_allocate"
+    },
+    {
+      "name": "mprotect",
+      "number": 10,
+      "operation_kind": "memory_protect"
+    },
+    {
+      "name": "connect",
+      "number": 42,
+      "operation_kind": "network_connect"
+    },
+    {
+      "name": "sendto",
+      "number": 44,
+      "operation_kind": "network_send"
+    },
+    {
+      "name": "recvfrom",
+      "number": 45,
+      "operation_kind": "network_download"
+    },
+    {
+      "name": "execve",
+      "number": 59,
+      "operation_kind": "process_launch"
+    },
+    {
+      "name": "openat",
+      "number": 257,
+      "operation_kind": "file_open"
+    }
+  ],
+  "raw_escalation_dangerous_anchor_tags": [
+    "amsi_bypass_attempt",
+    "bash_exec",
+    "cmd_exec",
+    "confirmed_pickle_exec_chain",
+    "credential_api_access",
+    "credential_dump_attempt",
+    "defender_disable",
+    "dns_tunneling",
+    "download_execute_chain",
+    "download_write_execute_chain",
+    "dpapi_access",
+    "encoded_powershell",
+    "etw_bypass_attempt",
+    "http_upload",
+    "lolbin_download",
+    "lsass_access",
+    "memory_dump",
+    "memory_write",
+    "network_c2",
+    "network_download",
+    "network_exfiltration",
+    "pickle_dropper_chain",
+    "pickle_encoded_loader_chain",
+    "pickle_fileless_exec_chain",
+    "pickle_loader_exec_chain",
+    "pickle_opcode_execution",
+    "pickle_reduce_callable_exec_chain",
+    "pickle_script_loader_chain",
+    "powershell_exec",
+    "process_exec",
+    "process_hollowing",
+    "process_injection",
+    "python_exec",
+    "registry_run_key",
+    "remote_command_channel",
+    "remote_payload_download",
+    "remote_scheduled_task",
+    "remote_thread_create",
+    "renpy_pickle_exec",
+    "rpa_index_pickle_exec",
+    "run_key_mod",
+    "scheduled_task",
+    "schtasks_create",
+    "script_execution",
+    "service_create",
+    "shadowcopy_delete",
+    "shellcode_exec",
+    "startup_persistence",
+    "thread_execution",
+    "token_exfiltration",
+    "token_secret_access",
+    "win32_process_create",
+    "wmi_exec",
+    "wmic_exec",
+    "write_process_memory"
+  ],
+  "schema_version": 1,
+  "strict_fast_benign_binary_magic_hex": [
+    "4d5a",
+    "7f454c46",
+    "504b0304"
+  ],
+  "strict_fast_benign_deny_tokens": [
+    "powershell",
+    "cmd.exe",
+    "wget ",
+    "curl ",
+    "http://",
+    "https://"
+  ],
+  "strict_fast_benign_extensions": [
+    ".txt",
+    ".md",
+    ".json",
+    ".ini",
+    ".cfg",
+    ".log",
+    ".csv"
+  ],
+  "strict_fast_benign_max_bytes": 65536
+}

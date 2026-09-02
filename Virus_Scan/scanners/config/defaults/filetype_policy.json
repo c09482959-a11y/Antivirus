@@ -1,0 +1,1531 @@
+{
+  "all_routable_extensions": [
+    ".7z",
+    ".aac",
+    ".asset",
+    ".assets",
+    ".avi",
+    ".bat",
+    ".bin",
+    ".bmp",
+    ".bundle",
+    ".bz2",
+    ".cfg",
+    ".cjs",
+    ".cmd",
+    ".cs",
+    ".csv",
+    ".dll",
+    ".dylib",
+    ".exe",
+    ".flac",
+    ".fnt",
+    ".gif",
+    ".gz",
+    ".htm",
+    ".html",
+    ".ini",
+    ".jar",
+    ".jpeg",
+    ".jpg",
+    ".js",
+    ".json",
+    ".lua",
+    ".m4a",
+    ".md",
+    ".mjs",
+    ".mkv",
+    ".mov",
+    ".mp3",
+    ".mp4",
+    ".ocx",
+    ".oga",
+    ".ogg",
+    ".opus",
+    ".otf",
+    ".png",
+    ".ps1",
+    ".py",
+    ".pyw",
+    ".rar",
+    ".rb",
+    ".resource",
+    ".resources",
+    ".ress",
+    ".resx",
+    ".rpa",
+    ".rpy",
+    ".rpyb",
+    ".rpyc",
+    ".rpymc",
+    ".rvdata",
+    ".rvdata2",
+    ".rxdata",
+    ".sh",
+    ".so",
+    ".svg",
+    ".sys",
+    ".tar",
+    ".tgz",
+    ".ttf",
+    ".txt",
+    ".unity3d",
+    ".vbs",
+    ".wav",
+    ".webm",
+    ".webp",
+    ".wma",
+    ".wmv",
+    ".woff",
+    ".woff2",
+    ".xml",
+    ".yaml",
+    ".yml",
+    ".zip"
+  ],
+  "behavior_model_version": "engine_extension_bucket_vector_v4",
+  "container_execution_capabilities": [
+    "container"
+  ],
+  "dangerous_actual_categories": [
+    "archive",
+    "binary",
+    "runtime"
+  ],
+  "engine_extension_bucket_policies": {
+    "renpy:.rpa": {
+      "high_risk": [
+        "persistence",
+        "evasion",
+        "injection",
+        "credential",
+        "os_execution"
+      ],
+      "normal": [
+        "entropy_or_packing",
+        "renpy_script_logic"
+      ],
+      "rare": [
+        "network"
+      ]
+    },
+    "renpy:.rpyb": {
+      "high_risk": [
+        "persistence",
+        "evasion",
+        "injection",
+        "credential",
+        "os_execution"
+      ],
+      "normal": [
+        "entropy_or_packing",
+        "renpy_script_logic"
+      ],
+      "rare": [
+        "network"
+      ]
+    },
+    "renpy:.rpyc": {
+      "high_risk": [
+        "persistence",
+        "evasion",
+        "injection",
+        "credential",
+        "os_execution"
+      ],
+      "normal": [
+        "entropy_or_packing",
+        "renpy_script_logic"
+      ],
+      "rare": [
+        "network"
+      ]
+    },
+    "rpgm:.js": {
+      "high_risk": [
+        "injection",
+        "credential",
+        "persistence",
+        "evasion"
+      ],
+      "normal": [
+        "rpgm_node_runtime"
+      ],
+      "rare": [
+        "network",
+        "os_execution"
+      ]
+    },
+    "unity:.dll": {
+      "high_risk": [
+        "injection",
+        "credential",
+        "persistence"
+      ],
+      "normal": [
+        "entropy_or_packing",
+        "unity_managed_code"
+      ],
+      "rare": [
+        "os_execution",
+        "network",
+        "evasion"
+      ]
+    },
+    "unity:.exe": {
+      "high_risk": [
+        "injection",
+        "credential",
+        "persistence"
+      ],
+      "normal": [
+        "entropy_or_packing",
+        "unity_managed_code",
+        "os_execution"
+      ],
+      "rare": [
+        "network",
+        "evasion"
+      ]
+    }
+  },
+  "engine_specific_filetype_buckets": {
+    "renpy": {
+      "renpy_archive": {
+        "execution_capability": "container",
+        "extensions": [
+          "rpa"
+        ],
+        "high_risk_buckets": [
+          "persistence",
+          "evasion",
+          "injection",
+          "credential",
+          "os_execution"
+        ],
+        "normal_buckets": [
+          "entropy_or_packing",
+          "renpy_script_logic"
+        ],
+        "rare_buckets": [
+          "network"
+        ]
+      },
+      "renpy_compiled": {
+        "execution_capability": "script",
+        "extensions": [
+          "rpyc",
+          "rpyb"
+        ],
+        "high_risk_buckets": [
+          "persistence",
+          "evasion",
+          "injection",
+          "credential",
+          "os_execution"
+        ],
+        "normal_buckets": [
+          "entropy_or_packing",
+          "renpy_script_logic"
+        ],
+        "rare_buckets": [
+          "network"
+        ]
+      },
+      "renpy_module": {
+        "execution_capability": "script",
+        "extensions": [
+          "rpym",
+          "rpymc"
+        ],
+        "high_risk_buckets": [
+          "injection",
+          "credential",
+          "persistence",
+          "evasion"
+        ],
+        "normal_buckets": [
+          "renpy_script_logic"
+        ],
+        "rare_buckets": [
+          "network",
+          "os_execution"
+        ]
+      },
+      "renpy_source": {
+        "execution_capability": "script",
+        "extensions": [
+          "rpy"
+        ],
+        "high_risk_buckets": [
+          "injection",
+          "credential",
+          "persistence",
+          "evasion"
+        ],
+        "normal_buckets": [
+          "renpy_script_logic"
+        ],
+        "rare_buckets": [
+          "network",
+          "os_execution"
+        ]
+      },
+      "renpy_translation": {
+        "execution_capability": "none",
+        "extensions": [
+          "rpt"
+        ],
+        "high_risk_buckets": [
+          "persistence",
+          "evasion",
+          "injection",
+          "credential",
+          "os_execution"
+        ],
+        "normal_buckets": [
+          "renpy_script_logic"
+        ],
+        "rare_buckets": []
+      }
+    },
+    "rpgm": {
+      "rpgm_data_modern": {
+        "execution_capability": "mixed",
+        "extensions": [
+          "json"
+        ],
+        "high_risk_buckets": [
+          "persistence",
+          "evasion",
+          "injection",
+          "credential",
+          "os_execution"
+        ],
+        "normal_buckets": [
+          "rpgm_node_runtime"
+        ],
+        "rare_buckets": [
+          "network",
+          "entropy_or_packing"
+        ]
+      },
+      "rpgm_encrypted_audio": {
+        "execution_capability": "none",
+        "extensions": [
+          "rpgmvo"
+        ],
+        "high_risk_buckets": [
+          "persistence",
+          "evasion",
+          "injection",
+          "credential",
+          "os_execution"
+        ],
+        "normal_buckets": [
+          "entropy_or_packing"
+        ],
+        "rare_buckets": []
+      },
+      "rpgm_encrypted_image": {
+        "execution_capability": "none",
+        "extensions": [
+          "rpgmvp"
+        ],
+        "high_risk_buckets": [
+          "persistence",
+          "evasion",
+          "injection",
+          "credential",
+          "os_execution"
+        ],
+        "normal_buckets": [
+          "entropy_or_packing"
+        ],
+        "rare_buckets": []
+      },
+      "rpgm_encrypted_video": {
+        "execution_capability": "none",
+        "extensions": [
+          "rpgmvm"
+        ],
+        "high_risk_buckets": [
+          "persistence",
+          "evasion",
+          "injection",
+          "credential",
+          "os_execution"
+        ],
+        "normal_buckets": [
+          "entropy_or_packing"
+        ],
+        "rare_buckets": []
+      },
+      "rpgm_package": {
+        "execution_capability": "container",
+        "extensions": [
+          "nw",
+          "pak"
+        ],
+        "high_risk_buckets": [
+          "persistence",
+          "evasion",
+          "injection",
+          "credential",
+          "os_execution"
+        ],
+        "normal_buckets": [
+          "entropy_or_packing",
+          "rpgm_node_runtime"
+        ],
+        "rare_buckets": [
+          "network"
+        ]
+      },
+      "rpgm_save_modern": {
+        "execution_capability": "none",
+        "extensions": [
+          "rpgsave"
+        ],
+        "high_risk_buckets": [
+          "os_execution",
+          "injection",
+          "persistence",
+          "evasion"
+        ],
+        "normal_buckets": [
+          "entropy_or_packing"
+        ],
+        "rare_buckets": [
+          "credential"
+        ]
+      },
+      "rpgm_script": {
+        "execution_capability": "script",
+        "extensions": [
+          "js"
+        ],
+        "high_risk_buckets": [
+          "injection",
+          "credential",
+          "persistence",
+          "evasion"
+        ],
+        "normal_buckets": [
+          "rpgm_node_runtime"
+        ],
+        "rare_buckets": [
+          "network",
+          "os_execution"
+        ]
+      },
+      "rpgm_serialized_data": {
+        "execution_capability": "none",
+        "extensions": [
+          "rvdata2",
+          "rxdata",
+          "rvdata"
+        ],
+        "high_risk_buckets": [
+          "os_execution",
+          "injection",
+          "persistence",
+          "evasion"
+        ],
+        "normal_buckets": [
+          "entropy_or_packing"
+        ],
+        "rare_buckets": [
+          "credential"
+        ]
+      },
+      "rpgm_web_runtime": {
+        "execution_capability": "mixed",
+        "extensions": [
+          "html",
+          "css"
+        ],
+        "high_risk_buckets": [
+          "injection",
+          "credential",
+          "persistence",
+          "evasion"
+        ],
+        "normal_buckets": [
+          "rpgm_node_runtime"
+        ],
+        "rare_buckets": [
+          "network",
+          "os_execution"
+        ]
+      }
+    },
+    "unity": {
+      "unity_animation": {
+        "execution_capability": "none",
+        "extensions": [
+          "anim",
+          "overridecontroller",
+          "controller"
+        ],
+        "high_risk_buckets": [
+          "persistence",
+          "evasion",
+          "injection",
+          "credential",
+          "os_execution"
+        ],
+        "normal_buckets": [],
+        "rare_buckets": [
+          "entropy_or_packing"
+        ]
+      },
+      "unity_assetbundle": {
+        "execution_capability": "container",
+        "extensions": [
+          "assetbundle",
+          "bundle",
+          "unity3d"
+        ],
+        "high_risk_buckets": [
+          "persistence",
+          "evasion",
+          "injection",
+          "credential",
+          "os_execution"
+        ],
+        "normal_buckets": [
+          "entropy_or_packing"
+        ],
+        "rare_buckets": [
+          "network"
+        ]
+      },
+      "unity_executable": {
+        "execution_capability": "native",
+        "extensions": [
+          "exe"
+        ],
+        "high_risk_buckets": [
+          "injection",
+          "credential",
+          "persistence"
+        ],
+        "normal_buckets": [
+          "entropy_or_packing",
+          "unity_managed_code",
+          "os_execution"
+        ],
+        "rare_buckets": [
+          "network",
+          "evasion"
+        ]
+      },
+      "unity_managed_code": {
+        "execution_capability": "managed",
+        "extensions": [
+          "dll"
+        ],
+        "high_risk_buckets": [
+          "injection",
+          "credential",
+          "persistence"
+        ],
+        "normal_buckets": [
+          "entropy_or_packing",
+          "unity_managed_code",
+          "os_execution"
+        ],
+        "rare_buckets": [
+          "network",
+          "evasion"
+        ]
+      },
+      "unity_material": {
+        "execution_capability": "none",
+        "extensions": [
+          "mat"
+        ],
+        "high_risk_buckets": [
+          "persistence",
+          "evasion",
+          "injection",
+          "credential",
+          "os_execution"
+        ],
+        "normal_buckets": [],
+        "rare_buckets": [
+          "entropy_or_packing"
+        ]
+      },
+      "unity_metadata": {
+        "execution_capability": "data",
+        "extensions": [
+          "metadata.dat",
+          "global-metadata.dat"
+        ],
+        "high_risk_buckets": [
+          "persistence",
+          "evasion",
+          "injection",
+          "credential",
+          "os_execution"
+        ],
+        "normal_buckets": [
+          "unity_managed_code",
+          "entropy_or_packing"
+        ],
+        "rare_buckets": []
+      },
+      "unity_native_code": {
+        "execution_capability": "native",
+        "extensions": [
+          "dylib",
+          "so"
+        ],
+        "high_risk_buckets": [
+          "injection",
+          "credential",
+          "persistence"
+        ],
+        "normal_buckets": [
+          "entropy_or_packing",
+          "os_execution"
+        ],
+        "rare_buckets": [
+          "network",
+          "evasion"
+        ]
+      },
+      "unity_prefab": {
+        "execution_capability": "none",
+        "extensions": [
+          "prefab"
+        ],
+        "high_risk_buckets": [
+          "persistence",
+          "evasion",
+          "injection",
+          "credential",
+          "os_execution"
+        ],
+        "normal_buckets": [],
+        "rare_buckets": [
+          "entropy_or_packing"
+        ]
+      },
+      "unity_resource_stream": {
+        "execution_capability": "data",
+        "extensions": [
+          "ress"
+        ],
+        "high_risk_buckets": [
+          "persistence",
+          "evasion",
+          "injection",
+          "credential",
+          "os_execution"
+        ],
+        "normal_buckets": [
+          "entropy_or_packing"
+        ],
+        "rare_buckets": []
+      },
+      "unity_scene": {
+        "execution_capability": "none",
+        "extensions": [
+          "unity"
+        ],
+        "high_risk_buckets": [
+          "persistence",
+          "evasion",
+          "injection",
+          "credential",
+          "os_execution"
+        ],
+        "normal_buckets": [],
+        "rare_buckets": [
+          "entropy_or_packing"
+        ]
+      },
+      "unity_serialized_asset": {
+        "execution_capability": "data",
+        "extensions": [
+          "assets",
+          "sharedassets",
+          "asset"
+        ],
+        "high_risk_buckets": [
+          "persistence",
+          "evasion",
+          "injection",
+          "credential",
+          "os_execution"
+        ],
+        "normal_buckets": [
+          "entropy_or_packing"
+        ],
+        "rare_buckets": [
+          "network"
+        ]
+      },
+      "unity_streaming_asset": {
+        "execution_capability": "data",
+        "extensions": [
+          "resource",
+          "resources"
+        ],
+        "high_risk_buckets": [
+          "persistence",
+          "evasion",
+          "injection",
+          "credential",
+          "os_execution"
+        ],
+        "normal_buckets": [
+          "entropy_or_packing"
+        ],
+        "rare_buckets": [
+          "network"
+        ]
+      }
+    }
+  },
+  "expected_magic_types_by_extension": {
+    ".asset": [
+      "unity_serialized_asset",
+      "unknown_binary_blob"
+    ],
+    ".assetbundle": [
+      "unity_assetbundle",
+      "unity_webdata",
+      "unknown_binary_blob"
+    ],
+    ".assets": [
+      "unity_serialized_asset",
+      "unknown_binary_blob"
+    ],
+    ".avi": [
+      "avi_riff"
+    ],
+    ".bat": [
+      "script_text",
+      "text"
+    ],
+    ".bmp": [
+      "bmp"
+    ],
+    ".bundle": [
+      "unity_assetbundle",
+      "unity_webdata",
+      "unknown_binary_blob"
+    ],
+    ".cfg": [
+      "ini_text",
+      "text",
+      "text_config"
+    ],
+    ".cjs": [
+      "script_text",
+      "text"
+    ],
+    ".cmd": [
+      "script_text",
+      "text"
+    ],
+    ".cs": [
+      "script_text",
+      "text"
+    ],
+    ".csv": [
+      "script_text",
+      "text",
+      "text_config"
+    ],
+    ".dll": [
+      "pe_mz"
+    ],
+    ".exe": [
+      "pe_mz"
+    ],
+    ".flac": [
+      "flac"
+    ],
+    ".gif": [
+      "gif"
+    ],
+    ".htm": [
+      "html_text",
+      "script_text",
+      "text"
+    ],
+    ".html": [
+      "html_text",
+      "script_text",
+      "text"
+    ],
+    ".ini": [
+      "ini_text",
+      "text",
+      "text_config"
+    ],
+    ".jar": [
+      "zip"
+    ],
+    ".jpeg": [
+      "jpeg"
+    ],
+    ".jpg": [
+      "jpeg"
+    ],
+    ".js": [
+      "json_text",
+      "script_text",
+      "text"
+    ],
+    ".json": [
+      "json_text",
+      "text",
+      "text_config"
+    ],
+    ".lua": [
+      "script_text",
+      "text"
+    ],
+    ".m4a": [
+      "mp4_iso_bmff"
+    ],
+    ".m4v": [
+      "mp4_iso_bmff"
+    ],
+    ".md": [
+      "script_text",
+      "text",
+      "text_config"
+    ],
+    ".mjs": [
+      "script_text",
+      "text"
+    ],
+    ".mkv": [
+      "matroska_webm"
+    ],
+    ".mov": [
+      "mp4_iso_bmff",
+      "quicktime"
+    ],
+    ".mp3": [
+      "mp3_frame",
+      "mp3_id3"
+    ],
+    ".mp4": [
+      "mp4_iso_bmff"
+    ],
+    ".oga": [
+      "ogg"
+    ],
+    ".ogg": [
+      "ogg"
+    ],
+    ".opus": [
+      "ogg"
+    ],
+    ".otf": [
+      "otf_font",
+      "unknown_binary_blob"
+    ],
+    ".png": [
+      "png"
+    ],
+    ".ps1": [
+      "script_text",
+      "text"
+    ],
+    ".py": [
+      "script_text",
+      "text"
+    ],
+    ".pyw": [
+      "script_text",
+      "text"
+    ],
+    ".rb": [
+      "script_text",
+      "text"
+    ],
+    ".resource": [
+      "unity_resource",
+      "unknown_binary_blob"
+    ],
+    ".resources": [
+      "unity_resource",
+      "unknown_binary_blob"
+    ],
+    ".ress": [
+      "unity_resource",
+      "unknown_binary_blob"
+    ],
+    ".rpa": [
+      "renpy_rpa",
+      "unknown_binary_blob"
+    ],
+    ".rpy": [
+      "script_text",
+      "text"
+    ],
+    ".rpyb": [
+      "renpy_rpyc",
+      "unknown_binary_blob"
+    ],
+    ".rpyc": [
+      "renpy_rpyc",
+      "unknown_binary_blob"
+    ],
+    ".rpymc": [
+      "renpy_rpyc",
+      "unknown_binary_blob"
+    ],
+    ".rvdata": [
+      "rpgm_marshal",
+      "unknown_binary_blob"
+    ],
+    ".rvdata2": [
+      "rpgm_marshal",
+      "unknown_binary_blob"
+    ],
+    ".rxdata": [
+      "rpgm_marshal",
+      "unknown_binary_blob"
+    ],
+    ".sh": [
+      "script_text",
+      "text"
+    ],
+    ".ttf": [
+      "ttf_font",
+      "unknown_binary_blob"
+    ],
+    ".txt": [
+      "script_text",
+      "text",
+      "text_config"
+    ],
+    ".unity3d": [
+      "unity_assetbundle",
+      "unity_webdata",
+      "unknown_binary_blob"
+    ],
+    ".vbs": [
+      "script_text",
+      "text"
+    ],
+    ".wav": [
+      "wav_riff"
+    ],
+    ".webm": [
+      "matroska_webm"
+    ],
+    ".webp": [
+      "webp"
+    ],
+    ".woff": [
+      "woff_font"
+    ],
+    ".woff2": [
+      "woff2_font"
+    ],
+    ".xml": [
+      "text",
+      "text_config",
+      "xml_text"
+    ],
+    ".yaml": [
+      "text",
+      "text_config"
+    ],
+    ".yml": [
+      "text",
+      "text_config"
+    ],
+    ".zip": [
+      "zip"
+    ]
+  },
+  "global_common_filetype_buckets": {
+    "asset_archive": {
+      "execution_capability": "container",
+      "extensions": [
+        "rar",
+        "zip",
+        "txz",
+        "tar",
+        "cab",
+        "gz",
+        "tgz",
+        "bz2",
+        "zst",
+        "tbz2",
+        "lzma",
+        "xz",
+        "7z"
+      ],
+      "high_risk_buckets": [
+        "persistence",
+        "evasion",
+        "injection",
+        "credential",
+        "os_execution"
+      ],
+      "normal_buckets": [
+        "entropy_or_packing"
+      ],
+      "rare_buckets": [
+        "network"
+      ]
+    },
+    "asset_audio": {
+      "execution_capability": "none",
+      "extensions": [
+        "wma",
+        "midi",
+        "aif",
+        "opus",
+        "aac",
+        "wav",
+        "oga",
+        "xm",
+        "s3m",
+        "flac",
+        "ogg",
+        "aiff",
+        "mid",
+        "mod",
+        "it",
+        "m4a",
+        "mka",
+        "mp3"
+      ],
+      "high_risk_buckets": [
+        "persistence",
+        "evasion",
+        "injection",
+        "credential",
+        "os_execution"
+      ],
+      "normal_buckets": [
+        "entropy_or_packing"
+      ],
+      "rare_buckets": []
+    },
+    "asset_binary_data": {
+      "execution_capability": "none",
+      "extensions": [
+        "blob",
+        "bytes",
+        "assets",
+        "dat",
+        "res",
+        "resources"
+      ],
+      "high_risk_buckets": [
+        "persistence",
+        "evasion",
+        "injection",
+        "credential",
+        "os_execution"
+      ],
+      "normal_buckets": [
+        "entropy_or_packing"
+      ],
+      "rare_buckets": [
+        "network"
+      ]
+    },
+    "asset_database": {
+      "execution_capability": "none",
+      "extensions": [
+        "sqlite3",
+        "db",
+        "sqlite"
+      ],
+      "high_risk_buckets": [
+        "os_execution",
+        "injection",
+        "persistence",
+        "evasion"
+      ],
+      "normal_buckets": [
+        "entropy_or_packing"
+      ],
+      "rare_buckets": [
+        "credential"
+      ]
+    },
+    "asset_font": {
+      "execution_capability": "none",
+      "extensions": [
+        "woff2",
+        "pfa",
+        "eot",
+        "pfb",
+        "woff",
+        "ttc",
+        "fnt",
+        "ttf",
+        "otf",
+        "bdf"
+      ],
+      "high_risk_buckets": [
+        "persistence",
+        "evasion",
+        "injection",
+        "credential",
+        "os_execution"
+      ],
+      "normal_buckets": [
+        "entropy_or_packing"
+      ],
+      "rare_buckets": []
+    },
+    "asset_image": {
+      "execution_capability": "none",
+      "extensions": [
+        "qoi",
+        "ktx2",
+        "dds",
+        "tiff",
+        "tif",
+        "psd",
+        "ktx",
+        "webp",
+        "gif",
+        "hdr",
+        "astc",
+        "jpeg",
+        "pvr",
+        "png",
+        "tga",
+        "bmp",
+        "avif",
+        "exr",
+        "jpg",
+        "jxl",
+        "ico"
+      ],
+      "high_risk_buckets": [
+        "persistence",
+        "evasion",
+        "injection",
+        "credential",
+        "os_execution"
+      ],
+      "normal_buckets": [
+        "entropy_or_packing"
+      ],
+      "rare_buckets": []
+    },
+    "asset_model_3d": {
+      "execution_capability": "none",
+      "extensions": [
+        "glb",
+        "ply",
+        "obj",
+        "fbx",
+        "3ds",
+        "dae",
+        "gltf",
+        "blend",
+        "stl"
+      ],
+      "high_risk_buckets": [
+        "persistence",
+        "evasion",
+        "injection",
+        "credential",
+        "os_execution"
+      ],
+      "normal_buckets": [
+        "entropy_or_packing"
+      ],
+      "rare_buckets": []
+    },
+    "asset_save_common": {
+      "execution_capability": "none",
+      "extensions": [
+        "slot",
+        "prefs",
+        "save",
+        "persistent",
+        "sav"
+      ],
+      "high_risk_buckets": [
+        "os_execution",
+        "injection",
+        "persistence",
+        "evasion"
+      ],
+      "normal_buckets": [
+        "entropy_or_packing"
+      ],
+      "rare_buckets": [
+        "credential"
+      ]
+    },
+    "asset_shader": {
+      "execution_capability": "limited",
+      "extensions": [
+        "shader",
+        "compute",
+        "glsl",
+        "vert",
+        "frag",
+        "hlsl",
+        "cginc"
+      ],
+      "high_risk_buckets": [
+        "persistence",
+        "evasion",
+        "injection",
+        "credential",
+        "os_execution"
+      ],
+      "normal_buckets": [],
+      "rare_buckets": [
+        "entropy_or_packing"
+      ]
+    },
+    "asset_subtitle": {
+      "execution_capability": "none",
+      "extensions": [
+        "srt",
+        "vtt",
+        "ssa",
+        "ass"
+      ],
+      "high_risk_buckets": [
+        "persistence",
+        "evasion",
+        "injection",
+        "credential",
+        "os_execution"
+      ],
+      "normal_buckets": [],
+      "rare_buckets": [
+        "entropy_or_packing"
+      ]
+    },
+    "asset_text_config": {
+      "execution_capability": "none",
+      "extensions": [
+        "csv",
+        "log",
+        "properties",
+        "conf",
+        "manifest",
+        "toml",
+        "meta",
+        "txt",
+        "rtf",
+        "ini",
+        "xml",
+        "plist",
+        "md",
+        "tsv",
+        "yaml",
+        "cfg",
+        "json",
+        "yml"
+      ],
+      "high_risk_buckets": [
+        "persistence",
+        "evasion",
+        "injection",
+        "credential",
+        "os_execution"
+      ],
+      "normal_buckets": [],
+      "rare_buckets": [
+        "network",
+        "entropy_or_packing"
+      ]
+    },
+    "asset_video": {
+      "execution_capability": "none",
+      "extensions": [
+        "ts",
+        "mpg",
+        "mov",
+        "mkv",
+        "wmv",
+        "ogv",
+        "mp4",
+        "webm",
+        "m4v",
+        "avi",
+        "mpeg"
+      ],
+      "high_risk_buckets": [
+        "persistence",
+        "evasion",
+        "injection",
+        "credential",
+        "os_execution"
+      ],
+      "normal_buckets": [
+        "entropy_or_packing"
+      ],
+      "rare_buckets": [
+        "network"
+      ]
+    },
+    "asset_web_common": {
+      "execution_capability": "mixed",
+      "extensions": [
+        "map",
+        "htm",
+        "svg",
+        "html",
+        "css"
+      ],
+      "high_risk_buckets": [
+        "injection",
+        "credential",
+        "persistence",
+        "evasion"
+      ],
+      "normal_buckets": [],
+      "rare_buckets": [
+        "entropy_or_packing",
+        "network",
+        "os_execution"
+      ]
+    },
+    "container_binary": {
+      "execution_capability": "container",
+      "extensions": [
+        "bin",
+        "pak"
+      ],
+      "high_risk_buckets": [
+        "persistence",
+        "evasion",
+        "injection",
+        "credential",
+        "os_execution"
+      ],
+      "normal_buckets": [
+        "entropy_or_packing"
+      ],
+      "rare_buckets": [
+        "network"
+      ]
+    },
+    "script_common": {
+      "execution_capability": "script",
+      "extensions": [
+        "cjs",
+        "pyc",
+        "jar",
+        "pyd",
+        "cs",
+        "sh",
+        "mjs",
+        "ps1",
+        "py",
+        "bat",
+        "lua",
+        "js",
+        "class",
+        "pyo",
+        "cmd",
+        "vbs",
+        "wasm"
+      ],
+      "high_risk_buckets": [
+        "injection",
+        "credential"
+      ],
+      "normal_buckets": [
+        "os_execution"
+      ],
+      "rare_buckets": [
+        "persistence",
+        "network",
+        "evasion"
+      ]
+    }
+  },
+  "high_risk_buckets": [
+    "credential",
+    "evasion",
+    "injection",
+    "os_execution",
+    "persistence"
+  ],
+  "magic_type_category": {
+    "7z": "archive",
+    "avi_riff": "media",
+    "bmp": "image",
+    "elf": "binary",
+    "flac": "media",
+    "gif": "image",
+    "gzip": "archive",
+    "html_text": "text_asset",
+    "ini_text": "text_asset",
+    "jpeg": "image",
+    "json_text": "text_asset",
+    "macho": "binary",
+    "matroska_webm": "media",
+    "mp3_frame": "media",
+    "mp3_id3": "media",
+    "mp4_iso_bmff": "media",
+    "ogg": "media",
+    "otf_font": "font",
+    "pe_mz": "binary",
+    "png": "image",
+    "quicktime": "media",
+    "rar": "archive",
+    "renpy_rpa": "archive",
+    "renpy_rpyc": "runtime",
+    "rpgm_marshal": "rpgm",
+    "script_text": "runtime",
+    "tar": "archive",
+    "text": "text_asset",
+    "text_config": "text_asset",
+    "ttf_font": "font",
+    "unity_assetbundle": "unity_asset",
+    "unity_resource": "unity_asset",
+    "unity_serialized_asset": "unity_asset",
+    "unity_webdata": "unity_asset",
+    "wav_riff": "media",
+    "webp": "image",
+    "woff2_font": "font",
+    "woff_font": "font",
+    "xml_text": "text_asset",
+    "zip": "archive"
+  },
+  "non_execution_capabilities": [
+    "none"
+  ],
+  "passive_asset_categories": [
+    "asset_audio",
+    "asset_binary_data",
+    "asset_database",
+    "asset_font",
+    "asset_image",
+    "asset_model_3d",
+    "asset_shader",
+    "asset_subtitle",
+    "asset_text_config",
+    "asset_video"
+  ],
+  "routable_extensions_by_claim": {
+    "archive": [
+      ".7z",
+      ".bz2",
+      ".gz",
+      ".jar",
+      ".rar",
+      ".rpa",
+      ".tar",
+      ".tgz",
+      ".zip"
+    ],
+    "binary": [
+      ".bin",
+      ".dll",
+      ".dylib",
+      ".exe",
+      ".ocx",
+      ".so",
+      ".sys"
+    ],
+    "font": [
+      ".fnt",
+      ".otf",
+      ".ttf",
+      ".woff",
+      ".woff2"
+    ],
+    "image": [
+      ".bmp",
+      ".gif",
+      ".jpeg",
+      ".jpg",
+      ".png",
+      ".svg",
+      ".webp"
+    ],
+    "media": [
+      ".aac",
+      ".avi",
+      ".bmp",
+      ".flac",
+      ".gif",
+      ".jpeg",
+      ".jpg",
+      ".m4a",
+      ".mkv",
+      ".mov",
+      ".mp3",
+      ".mp4",
+      ".oga",
+      ".ogg",
+      ".opus",
+      ".png",
+      ".wav",
+      ".webm",
+      ".webp",
+      ".wma",
+      ".wmv"
+    ],
+    "rpgm": [
+      ".rvdata",
+      ".rvdata2",
+      ".rxdata"
+    ],
+    "runtime": [
+      ".bat",
+      ".cjs",
+      ".cmd",
+      ".cs",
+      ".js",
+      ".lua",
+      ".mjs",
+      ".ps1",
+      ".py",
+      ".pyw",
+      ".rb",
+      ".rpy",
+      ".rpyb",
+      ".rpyc",
+      ".rpymc",
+      ".sh",
+      ".vbs"
+    ],
+    "text_asset": [
+      ".cfg",
+      ".csv",
+      ".htm",
+      ".html",
+      ".ini",
+      ".json",
+      ".md",
+      ".resx",
+      ".txt",
+      ".xml",
+      ".yaml",
+      ".yml"
+    ],
+    "unity_asset": [
+      ".asset",
+      ".assets",
+      ".bundle",
+      ".resource",
+      ".resources",
+      ".ress",
+      ".unity3d"
+    ]
+  },
+  "schema_version": 1
+}

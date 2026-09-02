@@ -1,0 +1,71 @@
+"""Model-layer exports for the canonical no-hook materialization policy.
+
+Model contracts historically owned a copy of this implementation. Keeping a
+single implementation prevents the accepted-value and hostile-hook policies
+from drifting between model and repository boundaries.
+"""
+from __future__ import annotations
+
+from Virus_Scan.contracts.no_hook_materialization import (
+    exact_bool_or_none,
+    exact_finite_float_or_none,
+    exact_int_or_none,
+    exact_text_or_none,
+    invalid_key_evidence,
+    is_exact_text,
+    materialize_json_no_hook,
+    materialize_mapping_no_hook,
+    no_hook_exact_nonnegative_int,
+    no_hook_exact_owner_field,
+    no_hook_exact_owner_field_status,
+    no_hook_duplicate_key,
+    no_hook_failure,
+    no_hook_finite_float,
+    no_hook_is_owned_mapping,
+    no_hook_json_key,
+    no_hook_json_sort_key,
+    no_hook_mapping_items,
+    no_hook_internal_frozen_dataclass_status,
+    no_hook_module_dict_status,
+    no_hook_mapping_items_status,
+    no_hook_materialize,
+    no_hook_optional_sequence_items,
+    no_hook_plain_instance_dict,
+    no_hook_plain_instance_dict_status,
+    no_hook_sequence_items,
+    no_hook_text,
+    no_hook_type_name,
+    unsupported_value_evidence,
+)
+
+__all__ = (
+    "exact_bool_or_none",
+    "exact_finite_float_or_none",
+    "exact_int_or_none",
+    "exact_text_or_none",
+    "invalid_key_evidence",
+    "is_exact_text",
+    "materialize_json_no_hook",
+    "materialize_mapping_no_hook",
+    "no_hook_duplicate_key",
+    "no_hook_exact_nonnegative_int",
+    "no_hook_exact_owner_field",
+    "no_hook_exact_owner_field_status",
+    "no_hook_failure",
+    "no_hook_finite_float",
+    "no_hook_internal_frozen_dataclass_status",
+    "no_hook_is_owned_mapping",
+    "no_hook_json_key",
+    "no_hook_json_sort_key",
+    "no_hook_mapping_items",
+    "no_hook_mapping_items_status",
+    "no_hook_materialize",
+    "no_hook_module_dict_status",
+    "no_hook_optional_sequence_items",
+    "no_hook_plain_instance_dict",
+    "no_hook_plain_instance_dict_status",
+    "no_hook_sequence_items",
+    "no_hook_text",
+    "no_hook_type_name",
+    "unsupported_value_evidence",
+)

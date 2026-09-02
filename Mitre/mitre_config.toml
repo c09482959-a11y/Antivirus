@@ -1,0 +1,7 @@
+config_version = "stage2636_11008_attack_config_v2"
+enabled = true
+allow_download = false
+force_refresh = false
+api_url = "https://api.github.com/repos/mitre-attack/attack-stix-data/contents/enterprise-attack/enterprise-attack.json"
+ref = "master"
+maximum_bytes = 268435456

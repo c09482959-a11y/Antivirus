@@ -1,0 +1,8 @@
+"""Execution tag-to-behavior defaults."""
+from __future__ import annotations
+
+from Virus_Scan.detection.registries.immutability import freeze_registry_value
+
+EXECUTION_TAG_TO_BEHAVIOR = freeze_registry_value({'bash_exec': 'script_execution', 'certutil': 'certutil_exec', 'certutil_exec': 'certutil_exec', 'cmd_exec': 'process_exec', 'cscript_exec': 'script_execution', 'dotnet_execution': 'process_exec', 'encoded_powershell': 'encoded_powershell', 'fileless_execution': 'fileless_execution', 'inline_task': 'fileless_execution', 'installutil_exec': 'process_exec', 'invoke_expression': 'script_execution', 'jscript_execution': 'script_execution', 'lolbin_download': 'lolbin_download', 'macro_office': 'script_execution', 'msbuild_exec': 'process_exec', 'mshta': 'mshta_exec', 'mshta_exec': 'mshta_exec', 'office_macro_execution': 'script_execution', 'pickle_external_executable_reference': 'process_exec', 'pickle_external_script_reference': 'script_execution', 'powershell': 'powershell_exec', 'powershell_exec': 'powershell_exec', 'process_exec': 'process_exec', 'ps_exec': 'powershell_exec', 'python_exec': 'script_execution', 'regsvr32': 'regsvr32_exec', 'regsvr32_exec': 'regsvr32_exec', 'regsvr32_sct': 'regsvr32_exec', 'remote_powershell': 'winrm_exec', 'rundll32': 'rundll32_exec', 'rundll32_exec': 'rundll32_exec', 'script_execution': 'script_execution', 'scriptlet_execution': 'script_execution', 'shellcode_loader': 'shellcode_loader', 'syscall_sequence': 'shellcode_loader', 'vbs_execution': 'script_execution', 'wscript_exec': 'script_execution'})
+
+__all__ = ("EXECUTION_TAG_TO_BEHAVIOR",)

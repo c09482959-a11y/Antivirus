@@ -1,0 +1,21 @@
+{
+  "manifest_version": "yara_resource_manifest_v1",
+  "resources": [
+    {
+      "filename": "yara-forge-rules-core.zip",
+      "package_kind": "core",
+      "release_identity": "repository_pinned_yara_forge_resource",
+      "sha256": "3ad85d8518e5e968d930c93dadae9dcd7d215d0911d8d8f02717f15922c8529f",
+      "size": 1700208,
+      "source_project": "YARAHQ/yara-forge"
+    },
+    {
+      "filename": "yara-forge-rules-extended.zip",
+      "package_kind": "extended",
+      "release_identity": "repository_pinned_yara_forge_resource",
+      "sha256": "756bd295a87603d78f1c879ecb7d217c91c1bcb03461c34e604fa20a4a0acae5",
+      "size": 3518775,
+      "source_project": "YARAHQ/yara-forge"
+    }
+  ]
+}

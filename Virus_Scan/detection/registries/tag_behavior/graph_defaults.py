@@ -1,0 +1,56 @@
+"""Attack graph defaults owned by tag behavior detection."""
+from __future__ import annotations
+
+from types import MappingProxyType as mappingproxy
+
+from Virus_Scan.detection.registries.immutability import freeze_registry_value
+
+ATTACK_GRAPH = freeze_registry_value({'collection': mappingproxy({'nodes': ('clipboard_access',
+                                       'keylogging_behavior',
+                                       'screenshot_capture',
+                                       'file_collection',
+                                       'crypto_wallet_pattern',
+                                       'crypto_wallet_clipboard_replace')}),
+ 'credential_access': mappingproxy({'nodes': ('lsass_access',
+                                              'credential_dump_attempt',
+                                              'sam_access',
+                                              'vault_access',
+                                              'browser_credential_access')}),
+ 'defense_evasion': mappingproxy({'nodes': ('encoded_powershell',
+                                            'obfuscated_script',
+                                            'amsi_bypass_attempt',
+                                            'amsi_scanbuffer_patch',
+                                            'etw_bypass_attempt',
+                                            'etw_eventwrite_patch',
+                                            'log_clearing',
+                                            'defender_disable',
+                                            'security_process_kill',
+                                            'security_service_disable',
+                                            'shadowcopy_delete',
+                                            'recovery_disable',
+                                            'firewall_rule_change',
+                                            'tamper_protection_disable')}),
+ 'execution': mappingproxy({'nodes': ('powershell_exec', 'cmd_exec', 'wscript_exec', 'mshta_exec')}),
+ 'exfiltration': mappingproxy({'nodes': ('http_upload',
+                                         'dns_tunneling',
+                                         'cloud_upload',
+                                         'ftp_transfer',
+                                         'blockchain_api_access',
+                                         'blockchain_c2_polling')}),
+ 'initial_access': mappingproxy({'nodes': ('phishing', 'drive_by', 'user_execution', 'script_execution')}),
+ 'lateral_movement': mappingproxy({'nodes': ('psexec_usage',
+                                             'wmi_exec',
+                                             'winrm_exec',
+                                             'remote_powershell',
+                                             'win32_process_create',
+                                             'remote_execution',
+                                             'remote_service_creation',
+                                             'admin_share_access',
+                                             'smb_activity',
+                                             'impacket_exec',
+                                             'remote_scheduled_task',
+                                             'remote_registry',
+                                             'rdp_enable_or_use')}),
+ 'privilege_escalation': mappingproxy({'nodes': ('token_impersonation', 'runas_usage', 'uac_bypass')})})
+
+__all__ = ("ATTACK_GRAPH",)

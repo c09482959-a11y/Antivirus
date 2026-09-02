@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "scanner_limits_policy.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "image_stego_max_file_bytes",
+    "image_stego_max_pixels",
+    "image_stego_sample_pixels",
+    "image_stego_resize_sample_max_side",
+    "image_enrichment_thorough_bytes",
+    "image_enrichment_auto_escalated_bytes",
+    "image_enrichment_fast_bytes",
+    "strings_intrastage_min_text_chars",
+    "strings_intrastage_chunk_chars",
+    "strings_intrastage_chunk_overlap",
+    "strings_intrastage_max_chunks",
+    "strings_ast_max_literal_chars",
+    "strings_ast_max_text_chars",
+    "strings_ast_max_items",
+    "raw_queue_strings_blob_max_chars",
+    "raw_chunk_default_read_size",
+    "raw_chunk_strings_blob_max_chars",
+    "raw_chunk_text_probe_bytes",
+    "raw_chunk_mz_probe_bytes",
+    "image_payload_magic_prefixes",
+    "image_payload_needles",
+    "image_lsb_trigger_tags",
+    "image_suspicious_png_text_needles",
+    "image_suspicious_binary_needles",
+    "image_confirmed_tags",
+    "image_magic_prefixes_by_extension",
+    "image_jpeg_lsb_weak_tags",
+    "image_stego_tag_rewrite_map"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "image_payload_magic_prefixes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "image_payload_needles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "image_lsb_trigger_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "image_suspicious_png_text_needles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "image_suspicious_binary_needles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "image_confirmed_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "image_magic_prefixes_by_extension": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "minItems": 1
+      }
+    },
+    "image_stego_max_file_bytes": {
+      "type": "integer"
+    },
+    "image_stego_max_pixels": {
+      "type": "integer"
+    },
+    "image_stego_sample_pixels": {
+      "type": "integer"
+    },
+    "image_stego_resize_sample_max_side": {
+      "type": "integer"
+    },
+    "image_enrichment_thorough_bytes": {
+      "type": "integer"
+    },
+    "image_enrichment_auto_escalated_bytes": {
+      "type": "integer"
+    },
+    "image_enrichment_fast_bytes": {
+      "type": "integer"
+    },
+    "strings_intrastage_min_text_chars": {
+      "type": "integer"
+    },
+    "strings_intrastage_chunk_chars": {
+      "type": "integer"
+    },
+    "strings_intrastage_chunk_overlap": {
+      "type": "integer"
+    },
+    "strings_intrastage_max_chunks": {
+      "type": "integer"
+    },
+    "strings_ast_max_literal_chars": {
+      "type": "integer"
+    },
+    "strings_ast_max_text_chars": {
+      "type": "integer"
+    },
+    "strings_ast_max_items": {
+      "type": "integer"
+    },
+    "raw_queue_strings_blob_max_chars": {
+      "type": "integer"
+    },
+    "raw_chunk_default_read_size": {
+      "type": "integer"
+    },
+    "raw_chunk_strings_blob_max_chars": {
+      "type": "integer"
+    },
+    "raw_chunk_text_probe_bytes": {
+      "type": "integer"
+    },
+    "raw_chunk_mz_probe_bytes": {
+      "type": "integer"
+    },
+    "image_jpeg_lsb_weak_tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "image_stego_tag_rewrite_map": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

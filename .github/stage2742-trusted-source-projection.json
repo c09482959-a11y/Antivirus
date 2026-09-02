@@ -1,0 +1,12 @@
+{
+    "schema":  "STAGE2742_PUBLIC_TRUSTED_SOURCE_PROJECTION_V1",
+    "trusted_source_repository":  "c09482959-a11y/Antivirus-Trusted-Source",
+    "trusted_source_commit_sha":  "60474f27cc68907f40309db02d2503cc88287a00",
+    "trusted_source_tree_sha":  "a0f17df13e4b7d41cb8d69b61fa55d39d4b552da",
+    "logical_source_scope_evidence_sha256":  "abe7527b09f6f635a272561ebfe13e7145d68b189f02b62b5d309707edbfab1f",
+    "logical_source_member_count":  4181,
+    "logical_source_member_set_digest":  null,
+    "source_universe_aggregate_sha256":  null,
+    "logical_source_total_bytes":  0,
+    "public_overlay_policy":  "ONLY_.github/**_README.md_AND_LICENSE_MAY_EXIST_BEYOND_TRUSTED_TREE"
+}

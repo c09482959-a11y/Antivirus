@@ -1,0 +1,36 @@
+{
+  "activation_counts": {
+    "active_alignments": 0,
+    "active_calibrations": 0,
+    "active_implementations": 0,
+    "active_policies": 0,
+    "quarantined_alignments": 0,
+    "quarantined_calibrations": 0,
+    "quarantined_implementations": 1,
+    "quarantined_policies": 0,
+    "retired_policies": 1
+  },
+  "activation_digest": "da2e9dfe5543d13653d96ff0514579da96ecd73ba2ddffae66e172f3975b549d",
+  "activation_state": "seed_validated",
+  "active_bundle": "enterprise-attack-v9c27a5d97ad9328c845f3114351104d54cffc71b.json",
+  "computed_git_blob_sha1": "9c27a5d97ad9328c845f3114351104d54cffc71b",
+  "dataset_version": "9c27a5d97ad9328c845f3114351104d54cffc71b",
+  "expected_git_blob_sha1": "9c27a5d97ad9328c845f3114351104d54cffc71b",
+  "local_sha256": "bdf1ce86a4e604214c5076d37ae4dcb322678afc528df8492e6fdc1b554f5da3",
+  "object_counts": {
+    "attack-pattern": 858,
+    "campaign": 56,
+    "course-of-action": 268,
+    "intrusion-set": 189,
+    "malware": 729,
+    "relationship": 21025,
+    "tool": 95,
+    "x-mitre-analytic": 1758,
+    "x-mitre-data-component": 109,
+    "x-mitre-data-source": 38,
+    "x-mitre-detection-strategy": 699,
+    "x-mitre-tactic": 15
+  },
+  "repository_digest": "96da129230304ea566cfa7dc7f0bf94da7f6b01bb41fad810943ff1d98a840b3",
+  "source_ref": "offline-seed"
+}

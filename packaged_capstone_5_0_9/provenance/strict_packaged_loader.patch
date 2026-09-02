@@ -1,0 +1,95 @@
+--- a/capstone/__init__.py
++++ b/capstone/__init__.py
+@@ -1,5 +1,9 @@
+ # Capstone Python bindings, by Nguyen Anh Quynnh <aquynh@gmail.com>
+ import os, sys
++from packaged_capstone_5_0_9.integrity import (
++    PackagedCapstoneUnavailable as _PackagedCapstoneUnavailable,
++    require_packaged_capstone as _require_packaged_capstone,
++)
+ 
+ _python2 = sys.version_info[0] < 3
+ if _python2:
+@@ -346,69 +350,19 @@
+ CS_OP    = {v:k for k,v in locals().items() if k.startswith('CS_OP_')}
+ CS_OPT   = {v:k for k,v in locals().items() if k.startswith('CS_OPT_')}
+ 
+-import ctypes, ctypes.util
+-from os.path import split, join, dirname
+-import sysconfig
+-from pathlib import PurePath
+-
+-import inspect
+-
+-if sys.version_info >= (3, 9):
+-    import importlib.resources as resources
+-else:
+-    import importlib_resources as resources
+-
+-if not hasattr(sys.modules[__name__], '__file__'):
+-    __file__ = inspect.getfile(inspect.currentframe())
+-
+-mode = 0
+-if sys.platform == 'darwin':
+-    _lib = "libcapstone.dylib"
+-elif sys.platform in ('win32', 'cygwin'):
+-    _lib = "capstone.dll"
+-else:
+-    _lib = "libcapstone.so"
+-    mode = getattr(os, 'RTLD_DEEPBIND', 0)
+-
+-_found = False
+-
+-def _load_lib(path):
+-    lib_file = join(path, _lib)
+-    if os.path.exists(lib_file):
+-        return ctypes.CDLL(lib_file, mode=mode)
+-    else:
+-        # if we're on linux, try again with .so.5 extension
+-        if lib_file.endswith('.so'):
+-            if os.path.exists(lib_file + '.{}'.format(CS_VERSION_MAJOR)):
+-                return ctypes.CDLL(
+-                    lib_file + '.{}'.format(CS_VERSION_MAJOR),
+-                    mode=mode
+-                )
+-    return None
+-
+-_cs = None
+-
+-# Loading attempts, in order
+-# - user-provided environment variable
+-# - importlib.resources can get us the path to the local libraries
+-# - we can get the path to the local libraries by parsing our filename
+-# - global load
+-# - python's lib directory
+-# - last-gasp attempt at some hardcoded paths on darwin and linux
+-
+-_path_list = [os.getenv('LIBCAPSTONE_PATH', None),
+-              str(resources.files(__name__) / "lib"),
+-              join(split(__file__)[0], 'lib'),
+-              '',
+-              sysconfig.get_path('platlib'),
+-              "/usr/local/lib/" if sys.platform == 'darwin' else '/usr/lib64']
+-
+-for _path in _path_list:
+-    if _path is None: continue
+-    _cs = _load_lib(_path)
+-    if _cs is not None: break
+-else:
+-    raise ImportError("ERROR: fail to load the dynamic library.")
++import ctypes
++
++# Repository-packaged strict loader: validate the immutable binding and native
++# core manifest, hashes, native-binary identity, ABI, architecture, and mode before the
++# sole adjacent core is loaded.  No host, environment, or alternate path exists.
++try:
++    _packaged_identity = _require_packaged_capstone()
++except _PackagedCapstoneUnavailable as _packaged_error:
++    raise ImportError("ERROR: packaged Capstone core is unavailable.") from _packaged_error
++
++_lib_path = _packaged_identity.native_core_path
++mode = getattr(os, 'RTLD_DEEPBIND', 0)
++_cs = ctypes.CDLL(_lib_path, mode=mode)
+ 
+ 
+ # low-level structure for C code

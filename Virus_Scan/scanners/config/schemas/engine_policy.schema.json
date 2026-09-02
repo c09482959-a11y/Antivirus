@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "engine_policy.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "unity_lifecycle_hooks",
+    "unity_runtime_checks",
+    "rpgm_encrypted_media_url_markers",
+    "rpgm_decrypted_media_suspicious_tokens",
+    "use_ilspy",
+    "engine_file_context_cues",
+    "media_profile_extensions",
+    "media_profile_tags",
+    "engine_context_runtime_hint_ambiguous_threshold",
+    "engine_context_runtime_hint_confidence_threshold",
+    "engine_context_runtime_hint_ambiguous_weight",
+    "engine_context_runtime_hint_weak_weight",
+    "unity_container_asset_extensions"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "unity_lifecycle_hooks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "unity_runtime_checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "needle",
+          "tag"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "needle": {
+            "type": "string",
+            "minLength": 1
+          },
+          "tag": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "rpgm_encrypted_media_url_markers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "rpgm_decrypted_media_suspicious_tokens": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "use_ilspy": {
+      "type": "boolean"
+    },
+    "engine_file_context_cues": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "extensions",
+          "path_markers",
+          "string_markers",
+          "tag_markers"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "extensions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "path_markers": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "string_markers": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "tag_markers": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          }
+        }
+      }
+    },
+    "media_profile_extensions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "media_profile_tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "engine_context_runtime_hint_ambiguous_threshold": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "engine_context_runtime_hint_confidence_threshold": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "engine_context_runtime_hint_ambiguous_weight": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 10.0
+    },
+    "engine_context_runtime_hint_weak_weight": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 10.0
+    },
+    "unity_container_asset_extensions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^\\."
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  }
+}

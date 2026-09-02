@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "api_key_environment_variable": {
+      "pattern": "^[A-Za-z_][A-Za-z0-9_]{0,127}$",
+      "type": "string"
+    },
+    "config_version": {
+      "const": "virustotal_config_v2"
+    },
+    "daily_upload_limit": {
+      "maximum": 10000000,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "include_full_response": {
+      "type": "boolean"
+    },
+    "max_retries": {
+      "maximum": 100,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "max_upload_mb": {
+      "maximum": 1024.0,
+      "minimum": 0.001,
+      "type": "number"
+    },
+    "network_check_timeout_sec": {
+      "maximum": 120.0,
+      "minimum": 0.1,
+      "type": "number"
+    },
+    "poll_attempts": {
+      "maximum": 10000,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "poll_for_report": {
+      "type": "boolean"
+    },
+    "poll_interval_sec": {
+      "maximum": 3600.0,
+      "minimum": 0.1,
+      "type": "number"
+    },
+    "poll_max_wait_sec": {
+      "maximum": 86400.0,
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "poll_stable_checks": {
+      "maximum": 100,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "print_skipped": {
+      "type": "boolean"
+    },
+    "print_submitted": {
+      "type": "boolean"
+    },
+    "print_to_cli": {
+      "type": "boolean"
+    },
+    "rate_limit_action": {
+      "enum": [
+        "skip",
+        "stop"
+      ]
+    },
+    "retry_delay_seconds": {
+      "maximum": 3600.0,
+      "minimum": 0.0,
+      "type": "number"
+    },
+    "retry_transient_errors": {
+      "type": "boolean"
+    },
+    "submit_high": {
+      "type": "boolean"
+    },
+    "submit_malicious": {
+      "type": "boolean"
+    },
+    "timeout_sec": {
+      "maximum": 3600.0,
+      "minimum": 0.5,
+      "type": "number"
+    },
+    "upload_rate_limit_per_minute": {
+      "maximum": 10000,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "wait_for_full_report": {
+      "type": "boolean"
+    },
+    "write_normalized_results": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "api_key_environment_variable",
+    "config_version",
+    "daily_upload_limit",
+    "enabled",
+    "include_full_response",
+    "max_retries",
+    "max_upload_mb",
+    "network_check_timeout_sec",
+    "poll_attempts",
+    "poll_for_report",
+    "poll_interval_sec",
+    "poll_max_wait_sec",
+    "poll_stable_checks",
+    "print_skipped",
+    "print_submitted",
+    "print_to_cli",
+    "rate_limit_action",
+    "retry_delay_seconds",
+    "retry_transient_errors",
+    "submit_high",
+    "submit_malicious",
+    "timeout_sec",
+    "upload_rate_limit_per_minute",
+    "wait_for_full_report",
+    "write_normalized_results"
+  ],
+  "title": "UMIGE VirusTotal configuration",
+  "type": "object"
+}

@@ -1,0 +1,403 @@
+{
+  "api_group_inferred_tags": {
+    "collection": [
+      "collection_capability"
+    ],
+    "credentials": [
+      "credential_access",
+      "credential_access_attempt"
+    ],
+    "dll": [
+      "dll_load"
+    ],
+    "evasion": [
+      "defense_evasion"
+    ],
+    "filesystem": [
+      "file_access"
+    ],
+    "memory": [
+      "memory_access",
+      "memory_read"
+    ],
+    "network": [
+      "network_activity"
+    ],
+    "process_access": [
+      "process_access"
+    ],
+    "process_execution": [
+      "process_exec"
+    ],
+    "registry": [
+      "registry_mod"
+    ],
+    "services": [
+      "lateral_movement"
+    ],
+    "threading": [
+      "thread_execution"
+    ]
+  },
+  "api_group_tags": {
+    "collection": "collection",
+    "credentials": "credential_api_access",
+    "dll": "dll_load",
+    "evasion": "defense_evasion",
+    "filesystem": "file_access",
+    "memory": "memory_access",
+    "network": "network_activity",
+    "process_access": "process_access",
+    "process_execution": "process_exec",
+    "registry": "registry_mod",
+    "services": "service_create",
+    "threading": "thread_execution"
+  },
+  "api_groups": {
+    "collection": [
+      "BitBlt",
+      "PrintWindow",
+      "GetAsyncKeyState",
+      "GetForegroundWindow",
+      "GetDC"
+    ],
+    "credentials": [
+      "MiniDumpWriteDump",
+      "LsaEnumerateLogonSessions",
+      "LsaGetLogonSessionData",
+      "CredEnumerate",
+      "CredRead",
+      "CredWrite"
+    ],
+    "dll": [
+      "LoadLibraryA",
+      "LoadLibraryW",
+      "LoadLibraryExA",
+      "LoadLibraryExW",
+      "GetProcAddress",
+      "LdrLoadDll"
+    ],
+    "evasion": [
+      "AmsiScanBuffer",
+      "EtwEventWrite",
+      "NtSetInformationThread",
+      "NtQueryInformationProcess"
+    ],
+    "filesystem": [
+      "CreateFile",
+      "ReadFile",
+      "WriteFile",
+      "DeleteFile",
+      "FindFirstFile",
+      "FindNextFile"
+    ],
+    "memory": [
+      "VirtualAlloc",
+      "VirtualAllocEx",
+      "VirtualProtect",
+      "VirtualProtectEx",
+      "WriteProcessMemory",
+      "ReadProcessMemory",
+      "NtWriteVirtualMemory",
+      "NtReadVirtualMemory",
+      "MapViewOfFile",
+      "MapViewOfFileEx"
+    ],
+    "network": [
+      "socket",
+      "connect",
+      "send",
+      "recv",
+      "InternetOpen",
+      "InternetOpenUrl",
+      "URLDownloadToFile",
+      "WinHttpSendRequest",
+      "WinHttpOpen"
+    ],
+    "process_access": [
+      "OpenProcess",
+      "OpenThread",
+      "OpenProcessToken",
+      "DuplicateToken",
+      "DuplicateTokenEx",
+      "ImpersonateLoggedOnUser",
+      "SetThreadToken",
+      "AdjustTokenPrivileges"
+    ],
+    "process_execution": [
+      "CreateProcessA",
+      "CreateProcessW",
+      "WinExec",
+      "ShellExecuteA",
+      "ShellExecuteW",
+      "ShellExecuteExA",
+      "ShellExecuteExW"
+    ],
+    "registry": [
+      "RegOpenKeyEx",
+      "RegCreateKey",
+      "RegSetValueEx",
+      "RegQueryValueEx",
+      "NtSetValueKey"
+    ],
+    "services": [
+      "CreateService",
+      "OpenSCManager",
+      "StartService",
+      "ControlService"
+    ],
+    "threading": [
+      "CreateRemoteThread",
+      "CreateRemoteThreadEx",
+      "NtCreateThreadEx",
+      "QueueUserAPC",
+      "SetThreadContext",
+      "ResumeThread"
+    ]
+  },
+  "api_specific_tags": {
+    "amsiscanbuffer": "defense_evasion",
+    "bitblt": "screenshot_capture",
+    "connect": "network_activity",
+    "createprocessa": "process_exec",
+    "createprocessw": "process_exec",
+    "createremotethread": "thread_execution",
+    "createservicea": "service_create",
+    "createservicew": "service_create",
+    "createthread": "thread_execution",
+    "credenumerate": "credential_api_access",
+    "credread": "credential_api_access",
+    "cryptunprotectdata": "dpapi_access",
+    "etweventwrite": "defense_evasion",
+    "getasynckeystate": "keylogging_behavior",
+    "getprocaddress": "dynamic_api_resolution",
+    "internetopenurl": "network_download",
+    "loadlibrarya": "dll_load",
+    "loadlibraryw": "dll_load",
+    "minidumpwritedump": "credential_dump_attempt",
+    "ntcreatethreadex": "thread_execution",
+    "openprocess": "process_access",
+    "printwindow": "screenshot_capture",
+    "readprocessmemory": "memory_read",
+    "recv": "network_activity",
+    "regsetvalueexa": "registry_mod",
+    "regsetvalueexw": "registry_mod",
+    "send": "network_activity",
+    "shellexecutea": "shell_execute",
+    "shellexecutew": "shell_execute",
+    "socket": "network_activity",
+    "urldownloadtofilea": "network_download",
+    "urldownloadtofilew": "network_download",
+    "virtualalloc": "memory_allocate",
+    "virtualallocex": "memory_allocate",
+    "virtualprotect": "memory_protect",
+    "virtualprotectex": "memory_protect",
+    "winhttpopenrequest": "network_activity",
+    "winhttpsendrequest": "network_activity",
+    "writeprocessmemory": "memory_write"
+  },
+  "broad_unvalidated_tags": [
+    "credential_access",
+    "defense_evasion",
+    "lateral_movement",
+    "network_activity",
+    "network_exfiltration",
+    "process_injection",
+    "reference_url",
+    "remote_execution",
+    "scheduled_task",
+    "script_execution",
+    "url_present"
+  ],
+  "combined_context_max_bonus": 15.0,
+  "contextual_baseline_common_tag_prob": 0.6,
+  "contextual_baseline_max_reduction": 22.0,
+  "contextual_baseline_min_files": 6,
+  "contextual_baseline_min_keep_with_anchor": 32.0,
+  "contextual_baseline_min_keep_without_anchor": 8.0,
+  "correlation_group_keywords": [
+    {
+      "group": "powershell_encoded",
+      "keywords": [
+        "powershell",
+        "encodedcommand",
+        "encoded_powershell",
+        "-enc"
+      ]
+    },
+    {
+      "group": "base64_decode",
+      "keywords": [
+        "base64",
+        "frombase64",
+        "decoded_base64",
+        "encoded_payload"
+      ]
+    },
+    {
+      "group": "process_execution",
+      "keywords": [
+        "process_exec",
+        "script_execution",
+        "shell_exec",
+        "wscript",
+        "mshta",
+        "rundll32"
+      ]
+    },
+    {
+      "group": "credential_access",
+      "keywords": [
+        "credential",
+        "lsass",
+        "token",
+        "password",
+        "cookie",
+        "stealer"
+      ]
+    },
+    {
+      "group": "network_transfer",
+      "keywords": [
+        "network",
+        "download",
+        "http",
+        "url",
+        "c2",
+        "exfil"
+      ]
+    },
+    {
+      "group": "persistence",
+      "keywords": [
+        "persistence",
+        "run_key",
+        "scheduled",
+        "service"
+      ]
+    },
+    {
+      "group": "packing_obfuscation",
+      "keywords": [
+        "packed",
+        "packer",
+        "obfus",
+        "xor",
+        "crypt",
+        "entropy"
+      ]
+    }
+  ],
+  "game_engine_context_tags": [
+    "actual_stage_asset",
+    "actual_stage_script",
+    "nwjs",
+    "renpy",
+    "renpy_bytecode",
+    "renpy_script",
+    "router_stage_asset",
+    "router_stage_script",
+    "rpgm",
+    "rpgm_js",
+    "unity",
+    "unity_asset"
+  ],
+  "context_corroboration_max_bonus": 10.0,
+  "library_baseline_hard_proof_tags": [
+    "amsi_scanbuffer_patch",
+    "backdoor_or_c2",
+    "c2_beacon",
+    "c2_or_remote_command",
+    "confirmed_embedded_pe_payload",
+    "confirmed_stego_payload",
+    "create_remote_thread",
+    "credential_dump_attempt",
+    "decoded_pe_payload",
+    "embedded_pe_payload",
+    "encoded_powershell",
+    "etw_eventwrite_patch",
+    "image_payload_confirmed",
+    "injection_api_chain",
+    "known_bad_hash",
+    "lsass_access",
+    "malware_family",
+    "mimikatz_credential_dump",
+    "network_c2",
+    "powershell_exec",
+    "process_injection",
+    "remote_thread_create",
+    "write_process_memory",
+    "yara_malware"
+  ],
+  "min_concrete_tags_for_context_boost": 2,
+  "min_score_for_context_boost": 25.0,
+  "passive_textual_categories": [
+    "runtime",
+    "text_asset"
+  ],
+  "runtime_strong_attack_context": [
+    "powershell -enc",
+    "encodedcommand",
+    "invoke-expression",
+    "iex(",
+    "cmd.exe /c",
+    "wscript.shell",
+    "mshta.exe",
+    "rundll32.exe",
+    "regsvr32.exe",
+    "schtasks /create",
+    "wmic process call create",
+    "createprocessw(",
+    "createprocessa(",
+    "writeprocessmemory",
+    "createremotethread",
+    "ntcreatethreadex",
+    "queueuserapc",
+    "mimikatz",
+    "sekurlsa",
+    "minidumpwritedump",
+    "lsass.exe",
+    "amsiscanbuffer",
+    "discord.com/api/webhooks",
+    "api.telegram.org",
+    "/gate.php",
+    "/panel/",
+    "reverse shell"
+  ],
+  "schema_version": 1,
+  "spyware_collection_tags": [
+    "keylogging_behavior",
+    "input_capture",
+    "clipboard_access",
+    "input_capture_collection_chain",
+    "screenshot_capture",
+    "screen_capture",
+    "file_collection"
+  ],
+  "spyware_sensitive_tags": [
+    "credential_access",
+    "credential_dump_attempt",
+    "browser_credential_access",
+    "token_secret_access",
+    "token_exfiltration"
+  ],
+  "spyware_sensitive_text_terms": [
+    "password",
+    "credential",
+    "token",
+    "cookie",
+    "wallet",
+    "seed phrase",
+    "private key",
+    "login data",
+    "cookies.sqlite"
+  ],
+  "spyware_suppressed_tags": [
+    "spyware_exfiltration_chain",
+    "spyware_behavior",
+    "exfiltration",
+    "network_exfiltration",
+    "http_upload"
+  ],
+  "vector_cluster_max_bonus": 8.0
+}

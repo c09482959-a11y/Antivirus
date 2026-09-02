@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "allow_full_download": {
+      "type": "boolean"
+    },
+    "allow_light_download": {
+      "type": "boolean"
+    },
+    "config_version": {
+      "const": "yara_config_v2"
+    },
+    "custom_rule_expected_sha256": {
+      "pattern": "^(?:[0-9a-f]{64})?$",
+      "type": "string"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "force_refresh": {
+      "type": "boolean"
+    },
+    "full_enabled": {
+      "type": "boolean"
+    },
+    "full_expected_sha256": {
+      "pattern": "^(?:[0-9a-f]{64})?$",
+      "type": "string"
+    },
+    "light_enabled": {
+      "type": "boolean"
+    },
+    "light_expected_sha256": {
+      "pattern": "^(?:[0-9a-f]{64})?$",
+      "type": "string"
+    },
+    "maximum_archive_bytes": {
+      "maximum": 268435456,
+      "minimum": 1024,
+      "type": "integer"
+    },
+    "maximum_compression_ratio": {
+      "maximum": 200.0,
+      "minimum": 1.0,
+      "type": "number"
+    },
+    "maximum_manifest_bytes": {
+      "maximum": 1048576,
+      "minimum": 64,
+      "type": "integer"
+    },
+    "maximum_member_bytes": {
+      "maximum": 67108864,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "maximum_members": {
+      "maximum": 50000,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "maximum_total_uncompressed_bytes": {
+      "maximum": 1073741824,
+      "minimum": 1024,
+      "type": "integer"
+    },
+    "partial_compile_threshold": {
+      "maximum": 1.0,
+      "minimum": 0.5,
+      "type": "number"
+    },
+    "release_api_url": {
+      "const": "https://api.github.com/repos/YARAHQ/yara-forge/releases/latest"
+    }
+  },
+  "required": [
+    "allow_full_download",
+    "allow_light_download",
+    "config_version",
+    "custom_rule_expected_sha256",
+    "enabled",
+    "force_refresh",
+    "full_enabled",
+    "full_expected_sha256",
+    "light_enabled",
+    "light_expected_sha256",
+    "maximum_archive_bytes",
+    "maximum_compression_ratio",
+    "maximum_manifest_bytes",
+    "maximum_member_bytes",
+    "maximum_members",
+    "maximum_total_uncompressed_bytes",
+    "partial_compile_threshold",
+    "release_api_url"
+  ],
+  "title": "UMIGE YARA configuration",
+  "type": "object"
+}

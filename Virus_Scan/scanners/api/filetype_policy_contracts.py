@@ -1,0 +1,39 @@
+"""Public scanner filetype-policy contracts for cross-domain callers and tests.
+
+The scanner domain owns the underlying immutable policy snapshot. This API file
+exposes read-only policy views so non-scanner callers and tests do not import
+scanner implementation modules directly.
+"""
+from __future__ import annotations
+
+from Virus_Scan.scanners.filetype_policy import (
+    ALL_ROUTABLE_EXTENSIONS,
+    BEHAVIOR_MODEL_VERSION,
+    CONTAINER_EXECUTION_CAPABILITIES,
+    DANGEROUS_ACTUAL_CATEGORIES,
+    ENGINE_EXTENSION_BUCKET_POLICIES,
+    ENGINE_SPECIFIC_FILETYPE_BUCKETS,
+    EXPECTED_MAGIC_TYPES_BY_EXTENSION,
+    GLOBAL_COMMON_FILETYPE_BUCKETS,
+    HIGH_RISK_BUCKETS,
+    MAGIC_TYPE_CATEGORY,
+    NON_EXECUTION_CAPABILITIES,
+    PASSIVE_ASSET_CATEGORIES,
+    ROUTABLE_EXTENSIONS_BY_CLAIM,
+)
+
+__all__ = (
+    "ALL_ROUTABLE_EXTENSIONS",
+    "BEHAVIOR_MODEL_VERSION",
+    "CONTAINER_EXECUTION_CAPABILITIES",
+    "DANGEROUS_ACTUAL_CATEGORIES",
+    "ENGINE_EXTENSION_BUCKET_POLICIES",
+    "ENGINE_SPECIFIC_FILETYPE_BUCKETS",
+    "EXPECTED_MAGIC_TYPES_BY_EXTENSION",
+    "GLOBAL_COMMON_FILETYPE_BUCKETS",
+    "HIGH_RISK_BUCKETS",
+    "MAGIC_TYPE_CATEGORY",
+    "NON_EXECUTION_CAPABILITIES",
+    "PASSIVE_ASSET_CATEGORIES",
+    "ROUTABLE_EXTENSIONS_BY_CLAIM",
+)

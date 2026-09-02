@@ -1,0 +1,286 @@
+{
+  "engine_context_runtime_hint_ambiguous_threshold": 0.35,
+  "engine_context_runtime_hint_ambiguous_weight": 2.25,
+  "engine_context_runtime_hint_confidence_threshold": 0.8,
+  "engine_context_runtime_hint_weak_weight": 0.2,
+  "engine_file_context_cues": {
+    "media": {
+      "extensions": [
+        ".png",
+        ".jpg",
+        ".jpeg",
+        ".gif",
+        ".bmp",
+        ".webp",
+        ".tif",
+        ".tiff",
+        ".ico",
+        ".dds",
+        ".ktx",
+        ".ktx2",
+        ".pvr",
+        ".qoi",
+        ".tga",
+        ".mp3",
+        ".wav",
+        ".ogg",
+        ".oga",
+        ".opus",
+        ".flac",
+        ".mp4",
+        ".m4v",
+        ".m4a",
+        ".mov",
+        ".avi",
+        ".webm",
+        ".mkv"
+      ],
+      "path_markers": [
+        "/images/",
+        "/image/",
+        "/audio/",
+        "/music/",
+        "/sounds/",
+        "/sfx/",
+        "/videos/",
+        "/movies/",
+        "/media/"
+      ],
+      "string_markers": [
+        "png",
+        "jpeg",
+        "id3",
+        "ogg",
+        "webp",
+        "riff",
+        "ftyp",
+        "matroska"
+      ],
+      "tag_markers": [
+        "media_asset",
+        "image_asset",
+        "audio_asset",
+        "video_asset",
+        "stego_payload_suspect",
+        "embedded_payload_after_eof"
+      ]
+    },
+    "renpy": {
+      "extensions": [
+        ".rpy",
+        ".rpyc",
+        ".rpyb",
+        ".rpa"
+      ],
+      "path_markers": [
+        "/renpy/",
+        "renpy/",
+        "game/scripts",
+        "librenpython"
+      ],
+      "string_markers": [
+        "renpy",
+        "ren'py",
+        "renpy.python"
+      ],
+      "tag_markers": [
+        "renpy",
+        "renpy_bytecode",
+        "renpy_archive",
+        "renpy_script"
+      ]
+    },
+    "rpgm": {
+      "extensions": [
+        ".rvdata",
+        ".rvdata2",
+        ".rxdata",
+        ".rgss2a",
+        ".rgss3a"
+      ],
+      "path_markers": [
+        "www/data",
+        "www/js",
+        "js/plugins",
+        "game.rgss",
+        "rpg_core.js",
+        "rpg_managers.js"
+      ],
+      "string_markers": [
+        "rgss",
+        "rpg maker",
+        "rpg_core",
+        "rpg_managers",
+        "rmmv",
+        "rmmz"
+      ],
+      "tag_markers": [
+        "rpgm",
+        "rpg_maker",
+        "rgss",
+        "rpgm_js"
+      ]
+    },
+    "unity": {
+      "extensions": [
+        ".assets",
+        ".unity3d",
+        ".resource",
+        ".ress",
+        ".bundle"
+      ],
+      "path_markers": [
+        "unityplayer.dll",
+        "gameassembly.dll",
+        "globalgamemanagers",
+        "managed/assembly-csharp.dll",
+        "managed\\assembly-csharp.dll",
+        "il2cpp_data",
+        "unitycrashhandler"
+      ],
+      "string_markers": [
+        "unity",
+        "unityplayer",
+        "il2cpp",
+        "mono/",
+        "assembly-csharp"
+      ],
+      "tag_markers": [
+        "unity",
+        "unity_engine",
+        "unity_asset",
+        "il2cpp",
+        "managed_dotnet"
+      ]
+    }
+  },
+  "media_profile_extensions": [
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".gif",
+    ".bmp",
+    ".webp",
+    ".tif",
+    ".tiff",
+    ".ico",
+    ".dds",
+    ".ktx",
+    ".ktx2",
+    ".pvr",
+    ".qoi",
+    ".tga",
+    ".mp3",
+    ".wav",
+    ".ogg",
+    ".oga",
+    ".opus",
+    ".flac",
+    ".mp4",
+    ".m4v",
+    ".m4a",
+    ".mov",
+    ".avi",
+    ".webm",
+    ".mkv"
+  ],
+  "media_profile_tags": [
+    "media_asset",
+    "image_asset",
+    "audio_asset",
+    "video_asset",
+    "image_file",
+    "audio_file",
+    "video_file",
+    "filetype_image",
+    "filetype_audio",
+    "filetype_video",
+    "magic_png",
+    "magic_jpeg",
+    "magic_gif",
+    "magic_webp",
+    "magic_ogg",
+    "magic_mp3",
+    "magic_flac",
+    "magic_mp4",
+    "stego_payload_suspect",
+    "embedded_payload_after_eof"
+  ],
+  "rpgm_decrypted_media_suspicious_tokens": [
+    "powershell",
+    "cmd.exe",
+    "frombase64string",
+    "certutil",
+    "bitsadmin",
+    "mimikatz"
+  ],
+  "rpgm_encrypted_media_url_markers": [
+    "http://",
+    "https://"
+  ],
+  "schema_version": 1,
+  "unity_container_asset_extensions": [
+    ".assets",
+    ".asset",
+    ".bundle",
+    ".unity3d",
+    ".resource",
+    ".resources",
+    ".ress"
+  ],
+  "unity_lifecycle_hooks": [
+    "Awake",
+    "Start",
+    "Update",
+    "FixedUpdate",
+    "OnEnable",
+    "OnDisable"
+  ],
+  "unity_runtime_checks": [
+    {
+      "needle": "AddComponent",
+      "tag": "unity_dynamic_component"
+    },
+    {
+      "needle": "GameObject.Find",
+      "tag": "unity_scene_manipulation"
+    },
+    {
+      "needle": "StartCoroutine",
+      "tag": "unity_async_flow"
+    },
+    {
+      "needle": "AssetBundle",
+      "tag": "unity_asset_loading"
+    },
+    {
+      "needle": "Resources.Load",
+      "tag": "unity_resource_load"
+    },
+    {
+      "needle": "Assembly.Load",
+      "tag": "assembly_load"
+    },
+    {
+      "needle": "BinaryFormatter",
+      "tag": "binary_deserialize"
+    },
+    {
+      "needle": "Process.Start",
+      "tag": "process_exec"
+    },
+    {
+      "needle": "WebClient",
+      "tag": "network_download"
+    },
+    {
+      "needle": "DownloadString",
+      "tag": "network_download"
+    },
+    {
+      "needle": "DownloadData",
+      "tag": "network_download"
+    }
+  ],
+  "use_ilspy": false
+}

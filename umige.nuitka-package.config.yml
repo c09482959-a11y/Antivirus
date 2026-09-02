@@ -1,0 +1,72 @@
+- module-name: 'Virus_Scan.scanners.config'
+  data-files:
+    - patterns:
+        - 'defaults/archive_policy.json'
+        - 'defaults/binary_policy.json'
+        - 'defaults/engine_policy.json'
+        - 'defaults/filetype_policy.json'
+        - 'defaults/payload_policy.json'
+        - 'defaults/pickle_policy.json'
+        - 'defaults/raw_chunk_policy.json'
+        - 'defaults/scanner_limits_policy.json'
+        - 'defaults/text_policy.json'
+        - 'schemas/archive_policy.schema.json'
+        - 'schemas/binary_policy.schema.json'
+        - 'schemas/engine_policy.schema.json'
+        - 'schemas/filetype_policy.schema.json'
+        - 'schemas/payload_policy.schema.json'
+        - 'schemas/pickle_policy.schema.json'
+        - 'schemas/raw_chunk_policy.schema.json'
+        - 'schemas/scanner_limits_policy.schema.json'
+        - 'schemas/text_policy.schema.json'
+- module-name: 'Virus_Scan.scanners.static_program_analysis'
+  data-files:
+    - patterns:
+        - 'typescript_parser_bridge.js'
+        - 'typescript_parser_resource/typescript.js'
+        - 'typescript_parser_resource/LICENSE.txt'
+        - 'typescript_parser_resource/ThirdPartyNoticeText.txt'
+        - 'typescript_parser_resource/package.json'
+        - 'typescript_parser_resource/node_runtime_manifest.json'
+        - 'typescript_parser_resource/node_runtime/NODE_LICENSE.txt'
+        - 'typescript_parser_resource/node_runtime/SHASUMS256.txt'
+  dlls:
+    - from_filenames:
+        relative_path: 'typescript_parser_resource/node_runtime/linux-x86_64'
+        prefixes:
+          - 'node'
+        executable: 'yes'
+      dest_path: 'Virus_Scan/scanners/static_program_analysis/typescript_parser_resource/node_runtime/linux-x86_64'
+      when: 'linux and arch_amd64'
+    - from_filenames:
+        relative_path: 'typescript_parser_resource/node_runtime/windows-x86_64'
+        prefixes:
+          - 'node'
+        suffixes:
+          - 'exe'
+        executable: 'yes'
+      dest_path: 'Virus_Scan/scanners/static_program_analysis/typescript_parser_resource/node_runtime/windows-x86_64'
+      when: 'win32 and arch_amd64'
+- module-name: 'packaged_capstone_5_0_9'
+  data-files:
+    - patterns:
+        - 'dependency_manifest.json'
+        - 'LICENSE.TXT'
+        - 'provenance/strict_packaged_loader.patch'
+  dlls:
+    - from_filenames:
+        relative_path: 'capstone/lib'
+        prefixes:
+          - 'libcapstone'
+        suffixes:
+          - 'so'
+      dest_path: 'packaged_capstone_5_0_9/capstone/lib'
+      when: 'linux and arch_amd64'
+    - from_filenames:
+        relative_path: 'capstone/lib'
+        prefixes:
+          - 'capstone'
+        suffixes:
+          - 'dll'
+      dest_path: 'packaged_capstone_5_0_9/capstone/lib'
+      when: 'win32 and arch_amd64'

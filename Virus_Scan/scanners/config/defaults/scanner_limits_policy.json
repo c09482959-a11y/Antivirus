@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "image_stego_max_file_bytes": 5000000,
+  "image_stego_max_pixels": 30000000,
+  "image_stego_sample_pixels": 262144,
+  "image_stego_resize_sample_max_side": 512,
+  "image_enrichment_thorough_bytes": 5000000,
+  "image_enrichment_auto_escalated_bytes": 2000000,
+  "image_enrichment_fast_bytes": 512000,
+  "strings_intrastage_min_text_chars": 65536,
+  "strings_intrastage_chunk_chars": 65536,
+  "strings_intrastage_chunk_overlap": 4096,
+  "strings_intrastage_max_chunks": 128,
+  "strings_ast_max_literal_chars": 16384,
+  "strings_ast_max_text_chars": 65536,
+  "strings_ast_max_items": 256,
+  "raw_queue_strings_blob_max_chars": 262144,
+  "raw_chunk_default_read_size": 65536,
+  "raw_chunk_strings_blob_max_chars": 65536,
+  "raw_chunk_text_probe_bytes": 262144,
+  "raw_chunk_mz_probe_bytes": 4096,
+  "image_payload_magic_prefixes": [
+    "MZ",
+    "PK\u0003\u0004",
+    "\u001f\u008b\b"
+  ],
+  "image_payload_needles": [
+    "powershell",
+    "cmd.exe",
+    "<script",
+    "frombase64string",
+    "http://",
+    "https://"
+  ],
+  "image_lsb_trigger_tags": [
+    "lsb_statistical_anomaly",
+    "stego_statistical_anomaly",
+    "png_private_chunks",
+    "image_appended_data"
+  ],
+  "image_suspicious_png_text_needles": [
+    "powershell",
+    "cmd.exe",
+    "http://",
+    "https://",
+    "base64",
+    "frombase64string"
+  ],
+  "image_suspicious_binary_needles": [
+    "cmd.exe",
+    "frombase64string",
+    "mimikatz",
+    "certutil",
+    "bitsadmin"
+  ],
+  "image_confirmed_tags": [
+    "image_payload_confirmed",
+    "image_appended_payload",
+    "decoded_stego_payload",
+    "embedded_command_or_url",
+    "confirmed_embedded_pe_payload",
+    "decoded_pe_payload",
+    "embedded_executable_payload",
+    "embedded_payload_after_eof",
+    "embedded_executable_or_command",
+    "high_confidence_image_payload",
+    "suspicious_png_text_payload",
+    "suspicious_jpeg_metadata_payload"
+  ],
+  "image_magic_prefixes_by_extension": {
+    ".png": [
+      "\u0089PNG\r\n\u001a\n"
+    ],
+    ".jpg": [
+      "\u00ff\u00d8\u00ff"
+    ],
+    ".jpeg": [
+      "\u00ff\u00d8\u00ff"
+    ],
+    ".gif": [
+      "GIF87a",
+      "GIF89a"
+    ],
+    ".bmp": [
+      "BM"
+    ],
+    ".tif": [
+      "II*\u0000",
+      "MM\u0000*"
+    ],
+    ".tiff": [
+      "II*\u0000",
+      "MM\u0000*"
+    ],
+    ".webp": [
+      "RIFF"
+    ]
+  },
+  "image_jpeg_lsb_weak_tags": [
+    "possible_lsb_stego",
+    "lsb_randomness_anomaly",
+    "strong_lsb_balance_anomaly",
+    "image_stego_lsb_anomaly"
+  ],
+  "image_stego_tag_rewrite_map": {
+    "possible_lsb_stego": "weak_image_stego_observation",
+    "lsb_randomness_anomaly": "weak_image_stego_observation",
+    "strong_lsb_balance_anomaly": "weak_image_stego_observation",
+    "image_stego_lsb_anomaly": "weak_image_stego_observation",
+    "possible_stego_payload": "stego_candidate_observation",
+    "stego_payload_suspect": "stego_candidate_observation",
+    "image_payload_candidate": "stego_candidate_observation",
+    "jpeg_metadata_url_reference": "image_metadata_url_reference",
+    "url_in_image": "image_metadata_url_reference",
+    "jpeg_metadata_encoded_reference": "image_metadata_encoded_reference"
+  }
+}

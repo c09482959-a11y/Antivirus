@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "api_groups": {
+      "type": "object"
+    },
+    "schema_version": {
+      "const": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "broad_unvalidated_tags",
+    "library_baseline_hard_proof_tags",
+    "passive_textual_categories",
+    "game_engine_context_tags",
+    "api_groups",
+    "api_specific_tags",
+    "api_group_tags",
+    "api_group_inferred_tags",
+    "spyware_collection_tags",
+    "spyware_sensitive_tags",
+    "spyware_sensitive_text_terms",
+    "spyware_suppressed_tags"
+  ],
+  "title": "text_policy v1",
+  "type": "object"
+}

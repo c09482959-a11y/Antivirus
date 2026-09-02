@@ -1,0 +1,107 @@
+{
+  "binding": {
+    "module": "packaged_capstone_5_0_9.capstone",
+    "path": "packaged_capstone_5_0_9/capstone/__init__.py",
+    "sha256": "4115631d117252c485dfb71c9a1d106dddb21e35eac790ac989ac4dc7d3e29e1",
+    "size": 41485,
+    "upstream_sha256": "6f8a27fe069aa89a46974e189b5365d56eb5e02c2fd581d2fbfad7fbba51549f"
+  },
+  "binding_version": "5.0.7",
+  "dependency_identity_sha256": "6629fee516a2773e58520d995d18c555d376da974a62bb9a5e1619543800839d",
+  "distribution_name": "capstone",
+  "distribution_version": "5.0.9",
+  "license": {
+    "path": "packaged_capstone_5_0_9/LICENSE.TXT",
+    "sha256": "65e9ed46a59976eda8f5bd1ea79a680dea38dd299c760bc9a8d87a764ef5029b"
+  },
+  "native_core_version": {
+    "extra": 1280,
+    "major": 5,
+    "minor": 0
+  },
+  "packaging": {
+    "patch_path": "packaged_capstone_5_0_9/provenance/strict_packaged_loader.patch",
+    "patch_sha256": "11a288e660c64d7433d3275e8f8d19429b4185cf71a04d9fd38c2a9e6c46c377",
+    "patch_size": 3150,
+    "policy": "repository_packaged_core_only_no_fallback_preload_validation_v3"
+  },
+  "schema_version": "packaged_capstone_dependency_manifest_v4",
+  "targets": [
+    {
+      "native_core": {
+        "binary_class": "ELF64",
+        "binary_format": "elf",
+        "exported_api": "capstone_c_api_5_0",
+        "filename": "libcapstone.so",
+        "machine": "EM_X86_64",
+        "path": "packaged_capstone_5_0_9/capstone/lib/libcapstone.so",
+        "required_exports": [
+          "cs_close",
+          "cs_disasm",
+          "cs_free",
+          "cs_open",
+          "cs_option",
+          "cs_version"
+        ],
+        "sha256": "a0897f809e062bdb2a84a6aca71707648e1b9420949b549fe8946f612c22dc84",
+        "size": 9600600
+      },
+      "provenance": {
+        "native_core_member": "capstone/lib/libcapstone.so",
+        "package_index_identity": "pypi:capstone==5.0.9",
+        "wheel_filename": "capstone-5.0.9-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "wheel_sha256": "273fd8d747d2e35c88f91450be51a603ecfaafb00d96d9f315dcb8689c86193e",
+        "wheel_size": 1485316,
+        "wheel_tag": "py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64"
+      },
+      "target": {
+        "abi": "manylinux_2_17_x86_64",
+        "architecture": "x86_64",
+        "endianness": "little",
+        "modes": [
+          "64"
+        ],
+        "operating_system": "linux",
+        "syntax": "intel"
+      }
+    },
+    {
+      "native_core": {
+        "binary_class": "PE32+",
+        "binary_format": "pe",
+        "exported_api": "capstone_c_api_5_0",
+        "filename": "capstone.dll",
+        "machine": "IMAGE_FILE_MACHINE_AMD64",
+        "path": "packaged_capstone_5_0_9/capstone/lib/capstone.dll",
+        "required_exports": [
+          "cs_close",
+          "cs_disasm",
+          "cs_free",
+          "cs_open",
+          "cs_option",
+          "cs_version"
+        ],
+        "sha256": "76958e18380023a68fd1714fa2e01c594cc6db1955a07ad6937b66e66dc5d6c3",
+        "size": 7576576
+      },
+      "provenance": {
+        "native_core_member": "capstone/lib/capstone.dll",
+        "package_index_identity": "pypi:capstone==5.0.9",
+        "wheel_filename": "capstone-5.0.9-py3-none-win_amd64.whl",
+        "wheel_sha256": "732cedbbb56d42e723f14d7af6387f1454194a820b4b96b56d1e53f865ef85d0",
+        "wheel_size": 1273459,
+        "wheel_tag": "py3-none-win_amd64"
+      },
+      "target": {
+        "abi": "win_amd64",
+        "architecture": "x86_64",
+        "endianness": "little",
+        "modes": [
+          "64"
+        ],
+        "operating_system": "windows",
+        "syntax": "intel"
+      }
+    }
+  ]
+}
