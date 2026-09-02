@@ -1,19 +1,20 @@
 {
-  "schema": "STAGE2742_PUBLIC_TRUSTED_SOURCE_PROJECTION_V1",
-  "trusted_source_repository": "c09482959-a11y/Antivirus-Trusted-Source",
-  "trusted_source_commit_sha": "60474f27cc68907f40309db02d2503cc88287a00",
-  "trusted_source_tree_sha": "a0f17df13e4b7d41cb8d69b61fa55d39d4b552da",
-  "logical_source_scope_evidence_sha256": "abe7527b09f6f635a272561ebfe13e7145d68b189f02b62b5d309707edbfab1f",
-  "logical_source_member_count": 4181,
-  "logical_source_total_bytes": 369224026,
-  "public_overlay_policy": "ONLY_.github/**_README.md_AND_LICENSE_MAY_EXIST_BEYOND_TRUSTED_TREE",
-  "public_candidate_sequence": 2,
-  "public_candidate_ref": "refs/heads/stage2742-candidate/000002-60474f27",
-  "public_candidate_authority": "NON_AUTHORITATIVE_PRE_PRIVATE_SENSOR_CANDIDATE",
-  "private_import_from_public_forbidden": true,
-  "candidate_source_set_digest_sha256": "eb9f7b5dded6665f6a5e49c815cfb58ae846070344aa46f6858ef0c0235b3a8e",
-  "pre_private_sensor_profile": "CODEQL_STATIC_DEPENDENCY_SECRET_WORKFLOW_SECURITY_V1",
-  "default_branch_only_sensor_exclusions": [
-    "OpenSSF Scorecard"
-  ]
+    "schema":  "STAGE2742_PUBLIC_TRUSTED_SOURCE_PROJECTION_V1",
+    "trusted_source_repository":  "c09482959-a11y/Antivirus-Trusted-Source",
+    "trusted_source_commit_sha":  "60474f27cc68907f40309db02d2503cc88287a00",
+    "trusted_source_tree_sha":  "a0f17df13e4b7d41cb8d69b61fa55d39d4b552da",
+    "logical_source_scope_evidence_sha256":  "abe7527b09f6f635a272561ebfe13e7145d68b189f02b62b5d309707edbfab1f",
+    "logical_source_member_count":  4181,
+    "logical_source_total_bytes":  369224026,
+    "public_overlay_policy":  "ONLY_.github/**_README.md_AND_LICENSE_MAY_EXIST_BEYOND_TRUSTED_TREE",
+    "public_candidate_sequence":  3,
+    "public_candidate_ref":  "refs/heads/stage2742-candidate/000003-60474f27",
+    "public_candidate_authority":  "NON_AUTHORITATIVE_PRE_PRIVATE_SENSOR_CANDIDATE",
+    "private_import_from_public_forbidden":  true,
+    "candidate_source_set_digest_sha256":  "eb9f7b5dded6665f6a5e49c815cfb58ae846070344aa46f6858ef0c0235b3a8e",
+    "pre_private_sensor_profile":  "CODEQL_STATIC_DEPENDENCY_SECRET_WORKFLOW_SECURITY_V1",
+    "default_branch_only_sensor_exclusions":  [
+                                                  "OpenSSF Scorecard"
+                                              ],
+    "action_reference_policy":  "ALL_EXTERNAL_ACTIONS_AND_REUSABLE_WORKFLOWS_FULL_COMMIT_SHA_PINNED"
 }
