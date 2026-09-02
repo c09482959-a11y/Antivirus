@@ -1,0 +1,128 @@
+name: Detection-First Static Analysis
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '11 4 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  semgrep:
+    name: Semgrep broad security and correctness
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Create isolated Semgrep environment
+        run: |
+          python3 -m venv "$RUNNER_TEMP/semgrep-venv"
+          echo "$RUNNER_TEMP/semgrep-venv/bin" >> "$GITHUB_PATH"
+          "$RUNNER_TEMP/semgrep-venv/bin/python" -m pip install --upgrade pip semgrep
+      - name: Run Semgrep with broad rules
+        id: semgrep
+        continue-on-error: true
+        run: |
+          semgrep scan \
+            --config auto \
+            --config p/security-audit \
+            --config p/owasp-top-ten \
+            --config p/secrets \
+            --metrics=off \
+            --sarif \
+            --output semgrep.sarif \
+            --error .
+      - name: Upload Semgrep SARIF
+        if: always() && hashFiles('semgrep.sarif') != ''
+        uses: github/codeql-action/upload-sarif@f205ea1c3313d32999d8d6a48b4f6530d4437b38 # v4.37.4
+        with:
+          sarif_file: semgrep.sarif
+          category: semgrep/broad
+      - name: Preserve Semgrep failure
+        if: always() && steps.semgrep.outcome == 'failure'
+        run: exit 1
+
+  python-static:
+    name: Python independent static sensors
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Detect Python source
+        id: source
+        shell: bash
+        run: |
+          if find . -type f -name '*.py' -not -path './.git/*' -print -quit | grep -q .; then
+            echo 'present=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'present=false' >> "$GITHUB_OUTPUT"
+            echo 'No Python source is present in this revision.'
+          fi
+      - name: Create isolated Python sensor environment
+        if: steps.source.outputs.present == 'true'
+        run: |
+          python3 -m venv "$RUNNER_TEMP/python-sensors"
+          echo "$RUNNER_TEMP/python-sensors/bin" >> "$GITHUB_PATH"
+          "$RUNNER_TEMP/python-sensors/bin/python" -m pip install --upgrade pip
+          "$RUNNER_TEMP/python-sensors/bin/pip" install ruff bandit mypy pyright pylint vulture
+      - name: Ruff
+        if: steps.source.outputs.present == 'true'
+        id: ruff
+        continue-on-error: true
+        run: ruff check . --output-format sarif --output-file ruff.sarif
+      - name: Upload Ruff SARIF
+        if: always() && hashFiles('ruff.sarif') != ''
+        uses: github/codeql-action/upload-sarif@f205ea1c3313d32999d8d6a48b4f6530d4437b38 # v4.37.4
+        with:
+          sarif_file: ruff.sarif
+          category: ruff/python
+      - name: Bandit
+        if: steps.source.outputs.present == 'true'
+        id: bandit
+        continue-on-error: true
+        run: bandit -r . -x ./.git,./Audit,./.pytest_cache
+      - name: Mypy
+        if: steps.source.outputs.present == 'true'
+        id: mypy
+        continue-on-error: true
+        run: mypy --ignore-missing-imports --check-untyped-defs .
+      - name: Pyright
+        if: steps.source.outputs.present == 'true'
+        id: pyright
+        continue-on-error: true
+        run: pyright .
+      - name: Pylint
+        if: steps.source.outputs.present == 'true'
+        id: pylint
+        continue-on-error: true
+        shell: bash
+        run: git ls-files -z '*.py' | xargs -0 -r pylint
+      - name: Vulture
+        if: steps.source.outputs.present == 'true'
+        id: vulture
+        continue-on-error: true
+        run: vulture . --min-confidence 60
+      - name: Preserve any Python sensor failure
+        if: >-
+          always() && steps.source.outputs.present == 'true' &&
+          (steps.ruff.outcome == 'failure' ||
+           steps.bandit.outcome == 'failure' ||
+           steps.mypy.outcome == 'failure' ||
+           steps.pyright.outcome == 'failure' ||
+           steps.pylint.outcome == 'failure' ||
+           steps.vulture.outcome == 'failure')
+        run: exit 1
