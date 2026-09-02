@@ -2,7 +2,7 @@ name: OpenSSF Scorecard Detection
 
 on:
   push:
-    branches: [main, 'stage2742-candidate/**']
+    branches: [main]
   schedule:
     - cron: '31 8 * * 6'
   workflow_dispatch:
