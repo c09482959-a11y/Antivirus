@@ -2,7 +2,7 @@ name: CodeQL Detection-First Analysis
 
 on:
   push:
-    branches: [main]
+    branches: [main, 'stage2742-candidate/**']
   pull_request:
     branches: [main]
   schedule:

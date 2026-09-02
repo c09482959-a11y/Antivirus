@@ -2,7 +2,7 @@ name: Detection-First Dependency and Vulnerability Sensors
 
 on:
   push:
-    branches: [main]
+    branches: [main, 'stage2742-candidate/**']
   pull_request:
     branches: [main]
   merge_group:
