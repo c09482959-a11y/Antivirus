@@ -7,8 +7,8 @@
     "logical_source_member_count":  4181,
     "logical_source_total_bytes":  369224026,
     "public_overlay_policy":  "ONLY_.github/**_README.md_AND_LICENSE_MAY_EXIST_BEYOND_TRUSTED_TREE",
-    "public_candidate_sequence":  4,
-    "public_candidate_ref":  "refs/heads/stage2742-candidate/000004-60474f27",
+    "public_candidate_sequence":  5,
+    "public_candidate_ref":  "refs/heads/stage2742-candidate/000005-60474f27",
     "public_candidate_authority":  "NON_AUTHORITATIVE_PRE_PRIVATE_SENSOR_CANDIDATE",
     "private_import_from_public_forbidden":  true,
     "candidate_source_set_digest_sha256":  "eb9f7b5dded6665f6a5e49c815cfb58ae846070344aa46f6858ef0c0235b3a8e",
@@ -17,5 +17,6 @@
                                                   "OpenSSF Scorecard"
                                               ],
     "action_reference_policy":  "ALL_EXTERNAL_ACTIONS_AND_REUSABLE_WORKFLOWS_FULL_COMMIT_SHA_PINNED",
-    "github_actions_repository_policy":  "SELECTED_ACTIONS_ONLY_AND_FULL_SHA_REQUIRED"
+    "github_actions_repository_policy":  "SELECTED_ACTIONS_ONLY_AND_FULL_SHA_REQUIRED",
+    "osv_scanner_v2_5_0_commit_sha":  "8deb546fdb875b9996d27d4950be7312dac076a1"
 }
