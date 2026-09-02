@@ -1,0 +1,15 @@
+name: Actions Startup Diagnostic
+
+on:
+  push:
+    branches: [main]
+
+permissions: {}
+
+jobs:
+  hosted:
+    name: Hosted runner startup probe
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prove workflow job execution
+        run: echo "GitHub Actions hosted execution reached a job step"
